@@ -1,9 +1,9 @@
-<!-- QUADRANT VIEW (v20 - Hybrid Editorial) -->
+<!-- QUADRANT VIEW (v21 - Proportional Fix for X) -->
 <div class="layout layout--col bg--white p--0" style="height: 100%; border: 1px solid rgba(0,0,0,0.1); position: relative;">
   
   <!-- IMAGE AREA -->
-  <!-- 100% height on standard, 55% on TRMNL X (lg) -->
-  <div class="h--full lg:h--[55cqh] w--full overflow--hidden no-shrink" style="position: relative;">
+  <!-- 100% height on standard, 40% on TRMNL X (lg) to give text more room -->
+  <div class="h--full lg:h--[40cqh] w--full overflow--hidden no-shrink" style="position: relative;">
     <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
 
     <!-- TITLE BOX OVERLAY -->
@@ -16,24 +16,25 @@
 
       <!-- WHITE BOX (Visible on 1bit and TRMNL X) -->
       <div class="hidden 1bit:block lg:block" style="background-color: rgba(255, 255, 255, 0.95); width: 90%; padding: 8px 12px; border: 3px solid black;">
-        <div class="title title--base lg:title--large text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; text-align: left;">{{ title }}</div>
+        <!-- Scaled title for X -->
+        <div class="title title--base lg:title--medium text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; text-align: left;">{{ title }}</div>
       </div>
 
     </div>
 
-    <!-- BRANDING OVERLAY (Bottom Right of Image) -->
-    <div style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 8px; align-items: center; z-index: 3;">
-      <img src="{{ logo_url }}" class="image image-dither w--12 h--12 lg:w--20 lg:h--20" style="background: white; padding: 1px; border: 1px solid black;" />
-      <img src="{{ qr_url }}" class="image w--12 h--12 lg:w--20 lg:h--20" style="background: white; padding: 1px; border: 1px solid black;" />
+    <!-- BRANDING OVERLAY -->
+    <div style="position: absolute; bottom: 6px; right: 6px; display: flex; gap: 6px; align-items: center; z-index: 3;">
+      <img src="{{ logo_url }}" class="image image-dither w--10 h--10 lg:w--16 lg:h--16" style="background: white; padding: 1px; border: 1px solid black;" />
+      <img src="{{ qr_url }}" class="image w--10 h--10 lg:w--16 lg:h--16" style="background: white; padding: 1px; border: 1px solid black;" />
     </div>
   </div>
 
-  <!-- METADATA AREA (Visible only on TRMNL X) -->
-  <div class="hidden lg:flex flex--col grow p--3 justify--top" style="text-align: left; background-color: white; border-top: 1px solid black;">
+  <!-- METADATA AREA (X ONLY) -->
+  <div class="hidden lg:flex flex--col grow p--3 justify--top" style="text-align: left; background-color: white; border-top: 2px solid black;">
     <!-- Date: Bold Serif Italic -->
-    <div style="font-family: serif; font-style: italic; font-weight: bold; font-size: 18px; color: black; opacity: 0.9; margin-bottom: 5px; width: 100%;">{{ archive_date }}</div>
-    <!-- Description: Large and Clear -->
-    <div class="description description--xlarge text--black" style="font-family: serif; font-style: italic; line-height: 1.3;">{{ description | truncate: 140 }}</div>
+    <div style="font-family: serif; font-style: italic; font-weight: bold; font-size: 16px; color: black; opacity: 0.9; margin-bottom: 4px; width: 100%;">{{ archive_date }}</div>
+    <!-- Description: High legibility for X -->
+    <div class="description description--large text--black" style="font-family: serif; font-style: italic; line-height: 1.25;">{{ description | truncate: 160 }}</div>
   </div>
 
 </div>
