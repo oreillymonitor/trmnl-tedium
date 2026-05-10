@@ -10,12 +10,6 @@
     - Latest Article: latest
   default: random
 
-- keyname: show_branding
-  name: Show Logo & QR
-  field_type: boolean
-  description: Toggle the visibility of the Tedium logo and article QR code.
-  default: true
-
 - keyname: image_opacity
   name: Background Opacity
   field_type: select
