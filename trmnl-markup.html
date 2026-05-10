@@ -1,8 +1,8 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v18 - Final Production)
+  TEDIUM EDITORIAL POSTER (v19 - Full View Date Restoration)
   - Permanent Branding (Logo & QR)
   - Customizable Background Opacity
-  - Optimized for TRMNL OG and TRMNL X
+  - Integrated Date in bottom-right of text box
 -->
 
 <div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
@@ -15,6 +15,11 @@
       <div class="flex flex--col grow" style="text-align: left;">
         <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; margin-bottom: 5px; text-align: left; width: 100%;">{{ title }}</div>
         <div class="description description--xlarge" style="color: white; line-height: 1.25; text-align: left; width: 100%;">{{ description }}</div>
+        
+        <!-- Date in bottom right -->
+        <div style="text-align: right; width: 100%; margin-top: 5px;">
+          <span class="label label--small" style="color: white; opacity: 0.8; font-family: serif; font-style: italic;">{{ archive_date }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -25,15 +30,18 @@
       <div class="flex flex--col grow" style="text-align: left;">
         <div class="title title--large lg:title--xxlarge text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; margin-bottom: 5px; text-align: left; width: 100%;">{{ title }}</div>
         <div class="description description--xlarge lg:description--xxlarge text--black" style="line-height: 1.25; text-align: left; width: 100%;">{{ description }}</div>
+        
+        <!-- Date in bottom right -->
+        <div style="text-align: right; width: 100%; margin-top: 10px;">
+          <span class="label label--small text--black" style="opacity: 0.8; font-family: serif; font-style: italic;">{{ archive_date }}</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- PERMANENT BRANDING LAYER -->
   <div style="position: absolute; bottom: 15px; right: 15px; display: flex; gap: 12px; align-items: flex-end; z-index: 4;">
-    <!-- Tedium Logo -->
     <img src="{{ logo_url }}" class="image image-dither w--20 h--20 lg:w--32 lg:h--32" style="border: 1px solid rgba(255,255,255,0.2); display: block;" />
-    <!-- Article QR Code -->
     <img src="{{ qr_url }}" class="image w--20 h--20 lg:w--32 lg:h--32" style="border: 1px solid rgba(255,255,255,0.2); display: block;" />
   </div>
 </div>
