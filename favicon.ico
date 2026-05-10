@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests;">
+
+
+
+<link href="/css/styles.css?v=moyeerwp" rel="stylesheet">
+<style type="text/css">@font-face {font-family:Besley;font-style:normal;font-weight:400 900;src:url(/cf-fonts/v/besley/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Besley;font-style:normal;font-weight:400 900;src:url(/cf-fonts/v/besley/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Besley;font-style:italic;font-weight:400 900;src:url(/cf-fonts/v/besley/5.0.18/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Besley;font-style:italic;font-weight:400 900;src:url(/cf-fonts/v/besley/5.0.18/latin-ext/wght/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer">
+<script src="https://cdn.jsdelivr.net/gh/Joe12387/detectIncognito@main/dist/es5/detectIncognito.min.js"></script>
+<script src="/js/loader.js"></script>
+
+
+<link rel="home" href="/" />
+<title>404 Page Not Found. Now You’ve Done It. | An Offbeat Digital Newsletter</title>
+
+
+<meta name="description" content=" You’re off the beaten path, but not in the way Tedium expects you to be.
+    " />
+ 
+
+<meta property="fediverse:creator" content="tedium@social.tedium.co" />
+
+
+<link rel="alternate" type="application/rss+xml" title="Tedium RSS feed" href="https://feed.tedium.co/" />
+
+
+<meta property="og:title" content="404 Page Not Found. Now You’ve Done It. | Tedium
+    ">
+
+<meta property="og:description" content="Tedium is a twice-weekly offbeat digital newsletter that mines the depths of the long tail in search of obscurities. Dig in.
+    ">
+
+
+
+    
+
+
+<meta property="og:image" content="/content/mosaic_with_overlay_red.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta property="og:url" content="https://tedium.co/404.html">
+<meta property="og:site_name" content="Tedium: The Dull Side of the Internet.">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@readtedium">
+<meta name="twitter:title" content="404 Page Not Found. Now You’ve Done It. | Tedium
+    ">
+<meta name="twitter:description" content=" You’re off the beaten path, but not in the way Tedium expects you to be.
+    ">
+<meta name="twitter:image" content="/content/mosaic_with_overlay_red.png">
+    
+<link rel="icon" type="image/png" href="/content/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/content/favicons/favicon.svg" />
+<link rel="shortcut icon" href="/content/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/content/favicons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Tedium" />
+<link rel="manifest" href="/content/favicons/site.webmanifest" />
+</head>
+<body>
+<div class="min-h-screen bg-gray-darkish text-white flex flex-col justify-center items-center relative py-8">
+    <!-- Main content -->
+    <div class="text-center px-4 flex-grow flex flex-col justify-center items-center">
+        <h1 class="font-bold font-semibold italic leading-[0.8]">
+            <!-- Mobile version (stacked) -->
+            <div class="block md:hidden">
+                <div class="text-[20vw] leading-[0.8]">you’re</div>&nbsp;
+                <div class="text-[20vw] leading-[0.8]">lost</div>
+            </div>
+            <!-- Desktop version (single line) -->
+            <div class="hidden md:block text-[10vw] leading-[0.8]">you’re lost.</div>
+        </h1>
+        <h2 class="text-2xl md:text-4xl 2xl:text-5xl font-medium italic mt-8">This is a 404 page. You have arrived here in error.<br/><br/> Here’s a poem. You’re welcome.</h2>
+        <a href="https://tedium.co"><img src="/content/logo_v3.svg" alt="Tedium logo" class="max-w-[300px] mt-12"></a>
+        <p class="text-sm font-bold">The Dull Side of the Internet.</p>
+    </div>
+
+    <!-- Bottom tease -->
+    <div class="w-full">
+        <bottom-tease class="w-full md:w-1/2 lg:w-1/3 m-auto align-bottom py-10 px-4">
+            <p class="text-center text-2xl text-white font-semibold">
+                <i class="fa-solid fa-down-long"></i>&nbsp;
+                <i>Read the poem.</i>&nbsp;
+                <i class="fa-solid fa-down-long"></i>
+            </p> 
+        </bottom-tease>
+    </div>
+</div>
+<innercontent class="">
+    <innergrid>
+        <article class="thank-you">
+            <content class="text-center italic">
+
+      <p class="md:text-xl lg:text-2xl 2xl:text-3xl !leading-[2]">Long before the Large Hadron Collider<br />
+        Became CERN’s calling card of sorts<br />
+        A young British man of sizable smarts<br />
+        Walked into a French lab, with a hypertext heart</p>
+        <p>&nbsp;</p>
+        <p class="md:text-xl lg:text-2xl 2xl:text-3xl !leading-[2]">Tim-Berners Lee, the internet’s idea man<br />
+        Couldn’t have seen the endless array of sites<br />
+        But one big thing <a href="https://twitter.com/timberners_lee/status/5342876032">he clearly prepared for</a><br />
+        Was what might happen if a link breaks or dies  </p>
+        <p>&nbsp;</p>
+        <p class="md:text-xl lg:text-2xl 2xl:text-3xl !leading-[2]">There are 404 reasons you might see this page<br />
+        But the biggest one helped Tim set the stage<br />
+        For you to enter the door<br />
+        Even if you got there by mistake.</p>
+        <p>&nbsp;</p>
+        <p class="md:text-xl lg:text-2xl 2xl:text-3xl !leading-[2]">Welcome to <a href="http://www.room404.com/page.php?pg=homepage">CERN room 404</a>.</p>
+        <p class="md:text-xl lg:text-2xl 2xl:text-3xl !leading-[2]"><em>— Ernest J. Smith, Esq.</em></p>
+            </content>
+                <form action="/search/" method="get" role="search">
+            <div class="relative m-auto !w-5/6">
+                <label for="search-input" class="sr-only">Search Tedium</label>
+                <input id="search-input" type="search" name="q" placeholder="Find a different place …" class="text-lg xl:text-2xl border-b border-gray hover:border-tedium focus:border-tedium focus:outline-none bg-transparent px-5 py-5 pl-12 m-auto !w-full">
+                <i class="fas fa-search absolute left-5 top-7 md:top-8 text-gray-400" aria-hidden="true"></i>
+            </div>
+        </form>
+        <a href="/archive" class="archivebutton no-underline !my-12 mx-auto !w-5/6"><span class="mobiletrim">Dig Into </span>Our Archives ⮕</a>
+        </article>>
+    </innergrid>
+</innercontent>
+
+    <footer class="overflow-hidden">
+        <footerbg>&nbsp;</footerbg>
+
+        <footerbox>
+            <footerlogo><img class="w-full" src="https://static.tedium.co/uploads/t-logo_nobg_v3.svg" alt="Tedium T Logo"></footerlogo>
+            <footeroutro>
+            <footerblurb><strong>Once upon a time,</strong> there was an internet that was weird and fascinating and didn’t make you mad. Since 2015, Tedium has tried to bring that internet back through a commitment to weirdness and a love for the obscure and offbeat. We are nominally a newsletter, but if you share our content on the web, we won’t be upset. But if you email us asking for a backlink, we’ll publicly scold you on social media using the most sarcastic possible language. Them’s the breaks.</footerblurb>
+            <footerlinks>
+                <ul>
+                    <li><a href="https://tedium.co/what-is-tedium">What is Tedium?</a></li>
+                    <li><a href="https://www.patreon.com/tedium">Support us on Patreon</a></li>
+                    <li><a href="https://tedium.co/contribute">Share your ideas!</a></li>
+                    <li><a href="https://tedium.co/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="https://tedium.co/advertising">Advertise With Us</a></li>
+                    <li><a href="https://feed.tedium.co/">RSS feed</a></li>
+                    <li><a rel="me" href="https://writing.exchange/@ernie">Ernie on Mastodon</a></li>
+                </ul>
+            </footerlinks>
+            </footeroutro>
+        </footerbox>
+        <fineprint>
+            <p><em><strong>Disclosure:</strong> From time to time, we may use affiliate links in our content—but only when it makes sense. Promise.</em></p>
+            <p><em><strong>P.S.:</strong> If you email me asking about doing a guest post or posting a backlink, you forfeit ownership of your site to me.</em></p>
+            <p>Proudly built using a combination of <a href="https://craftcms.com/">Craft CMS</a>, Eleventy, Tailwind, and general magic.</p>
+            <p>Copyright &copy; 2015-2026 Tedium LLC. All rights reserved. <a href="https://www.youtube.com/watch?v=hqi2Jy0UMiA">Please, try the fish</a>.</p>
+        </fineprint>
+    </footer>
+
+    <script defer data-domain="tedium.co" src="https://analytics.tedium.co/js/script.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+	</body>
+</html>

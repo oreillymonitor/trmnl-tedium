@@ -6,6 +6,7 @@ node_modules/
 # Documentation (Reference Only)
 TRMNL-DOCS/
 project.md
+.vercel/
 
 # Testing
 coverage/
@@ -31,3 +32,4 @@ yarn-error.log*
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+.vercel

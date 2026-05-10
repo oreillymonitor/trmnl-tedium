@@ -1,0 +1,30 @@
+<div class="view view--full">
+  <div class="title_bar">
+    <img class="image" src="{{ tedium_favicon }}" style="filter: grayscale(100%);">
+    <span class="title">TEDIUM</span>
+    <span class="instance">Random Archive</span>
+  </div>
+
+  <div class="layout layout--col layout--stretch">
+    <div class="flex flex--col gap--base stretch-y">
+      <div class="flex flex--row flex--space-between flex--align-start">
+        <span class="title title--xlarge stretch-x" style="line-height: 1.1;">{{ title }}</span>
+        <img src="{{ qr_code_url }}" class="image" style="width: 100px; height: 100px; margin-left: 20px;" />
+      </div>
+      
+      <span class="description description--large" data-clamp="4">{{ description }}</span>
+
+      <div class="flex flex--col flex--center stretch-y" style="overflow: hidden;">
+        <img class="image image-dither image--contain" src="{{ image_url }}" style="max-height: 100%;" />
+      </div>
+    </div>
+
+    <div class="flex flex--row flex--space-between flex--align-end" style="border-top: 2px solid var(--gray-40); padding-top: 10px; margin-top: 10px;">
+      <div class="flex flex--col">
+        <span class="label label--small">SOURCE: TEDIUM.CO</span>
+        <span class="label label--small label--underline">ARCHIVE: {{ archive_path }}</span>
+      </div>
+      <span class="title title--small">TRMNL TEDIUM</span>
+    </div>
+  </div>
+</div>
