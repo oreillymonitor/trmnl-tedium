@@ -1,26 +1,32 @@
-<div class="layout layout--col layout--stretch">
+<!-- 
+  IMPORTANT: No <html>, <body>, or <div class="view"> tags. 
+  The platform provides those. Start directly with <div class="layout"> 
+-->
+
+<div class="layout layout--col">
+  <!-- Debug at the top to ensure visibility -->
+  <div class="label label--small" style="color: #aaa; margin-bottom: 5px;">
+    DEBUG: {{ title | truncate: 20 }} | {{ archive_date }}
+  </div>
+
   <div class="flex flex--col gap--base stretch-y">
-    <!-- Header Row: Title and QR Code -->
+    <!-- Header Row -->
     <div class="flex flex--row flex--between flex--top">
-      <div class="grow">
-        <div class="title title--large" style="line-height: 1.1;">{{ title }}</div>
-      </div>
-      <div class="no-shrink" style="margin-left: 20px;">
-        <img src="{{ qr_url }}" class="image" style="width: 70px; height: 70px;" />
-      </div>
+      <span class="title title--medium grow" style="line-height: 1.2;">{{ title }}</span>
+      <img src="{{ qr_url }}" class="image no-shrink" style="width: 60px; height: 60px; margin-left: 15px;" />
     </div>
     
     <!-- Description -->
-    <div class="description description--base" data-clamp="3">{{ description }}</div>
+    <span class="description description--base" data-clamp="3">{{ description }}</span>
 
     <!-- Image Area -->
-    <div class="flex flex--col flex--center stretch-y" style="overflow: hidden;">
+    <div class="flex flex--col flex--center stretch-y" style="overflow: hidden; margin: 10px 0;">
       <img class="image image-dither image--contain" src="{{ image_url }}" style="max-height: 100%;" />
     </div>
   </div>
 
-  <!-- Footer -->
-  <div class="flex flex--row flex--between flex--bottom" style="border-top: 1px solid var(--gray-40); padding-top: 5px; margin-top: 5px;">
+  <!-- Footer Info -->
+  <div class="flex flex--row flex--between flex--bottom" style="border-top: 1px solid var(--gray-40); padding-top: 5px;">
     <div class="flex flex--col">
       <span class="label label--small">TEDIUM.CO</span>
       <span class="label label--small">{{ archive_date }}</span>
@@ -30,10 +36,7 @@
 </div>
 
 <div class="title_bar">
-  <img class="image" src="{{ favicon }}" style="filter: grayscale(100%);">
+  <img class="image" src="{{ favicon }}">
   <span class="title">TEDIUM</span>
   <span class="instance">Archive</span>
 </div>
-
-<!-- DEBUG LINE: Remove this if everything works -->
-<div style="font-size: 8px; color: gray;">Debug: {{ title | truncate: 10 }} | {{ archive_date }}</div>
