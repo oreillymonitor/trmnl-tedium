@@ -1,48 +1,53 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v3 - Optimized)
-  - True full-screen background
-  - Compact floating overlay box
-  - Bit-depth targeting for Color vs Grayscale
+  TEDIUM EDITORIAL POSTER (v4 - Device Targeted)
+  - Full-screen background
+  - Color-aware overlay (Crimson on Color, White on 1bit)
 -->
 
 <div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
   <!-- Background Layer -->
-  <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.75;" />
+  <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.7;" />
   
-  <!-- Overlay Container -->
-  <div class="flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 15px;">
-    
-    <!-- 
-      Compact Editorial Box 
-      - width: 80% (more compact)
-      - background: Crimson on color devices (4bit+), White on monochrome (1bit)
-    -->
-    <div class="1bit:bg--white" style="background-color: rgba(214, 90, 98, 0.95); width: 80%; padding: 20px 30px; position: relative; box-shadow: 15px 15px 35px rgba(0,0,0,0.8); border: 2px solid rgba(255,255,255,0.2);">
-      
+  <!-- 
+    COLOR/ADVANCED DEVICE BOX 
+    - Shown on 2bit and 4bit+
+    - Hidden on 1bit
+  -->
+  <div class="flex flex--col flex--center 1bit:hidden" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 20px;">
+    <div style="background-color: rgba(214, 90, 98, 0.95); width: 85%; padding: 25px 35px; box-shadow: 15px 15px 40px rgba(0,0,0,0.8); border: 2px solid rgba(255,255,255,0.2);">
       <div class="flex flex--row flex--between flex--top">
         <div class="flex flex--col grow">
-          <!-- Title: Serif, Bold, Italic. High contrast for 1bit. -->
-          <div class="title title--large 1bit:text--black" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; text-align: left; margin-bottom: 8px;">
-            {{ title }}
-          </div>
-          
-          <!-- Description: Clear and non-truncated -->
-          <div class="description description--base 1bit:text--black" style="color: white; line-height: 1.3; text-align: left;">
-            {{ description }}
-          </div>
+          <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; margin-bottom: 10px;">{{ title }}</div>
+          <div class="description description--base" style="color: white; line-height: 1.3;">{{ description }}</div>
         </div>
-
-        <!-- QR Code: Integrated without white box for cleaner look -->
-        <div class="no-shrink" style="padding: 3px; margin-left: 15px; background: white; border: 1px solid rgba(0,0,0,0.1);">
-          <img src="{{ qr_url }}" class="image" style="width: 60px; height: 60px; display: block;" />
+        <div class="no-shrink" style="padding: 4px; margin-left: 20px; background: white; border: 1px solid white;">
+          <img src="{{ qr_url }}" class="image" style="width: 65px; height: 65px; display: block;" />
         </div>
       </div>
     </div>
-    
+  </div>
+
+  <!-- 
+    MONOCHROME (1BIT) DEVICE BOX 
+    - Hidden by default
+    - Visible ONLY on 1bit
+  -->
+  <div class="hidden 1bit:flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; padding: 20px;">
+    <div class="bg--white" style="width: 85%; padding: 25px 35px; border: 4px solid black; box-shadow: 12px 12px 0px black;">
+      <div class="flex flex--row flex--between flex--top">
+        <div class="flex flex--col grow">
+          <div class="title title--large text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; margin-bottom: 10px;">{{ title }}</div>
+          <div class="description description--base text--black" style="line-height: 1.3;">{{ description }}</div>
+        </div>
+        <div class="no-shrink" style="padding: 4px; margin-left: 20px; border: 2px solid black; background: white;">
+          <img src="{{ qr_url }}" class="image" style="width: 65px; height: 65px; display: block;" />
+        </div>
+      </div>
+    </div>
   </div>
   
-  <!-- Subtle meta tag in bottom right (outside the main box) -->
-  <div style="position: absolute; bottom: 10px; right: 10px; z-index: 3; background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 4px;">
-    <span class="label label--tiny" style="color: white; opacity: 0.8; letter-spacing: 1px;">TEDIUM // {{ archive_date }}</span>
+  <!-- Subtle meta tag -->
+  <div style="position: absolute; bottom: 10px; right: 10px; z-index: 4; background: rgba(0,0,0,0.6); padding: 4px 10px; border-radius: 4px;">
+    <span class="label label--tiny" style="color: white; opacity: 0.9; letter-spacing: 1px;">TEDIUM // {{ archive_date }}</span>
   </div>
 </div>
