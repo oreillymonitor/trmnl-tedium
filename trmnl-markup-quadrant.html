@@ -1,9 +1,7 @@
-<!-- QUADRANT VIEW (v23 - Final Proportions) -->
+<!-- QUADRANT VIEW (v24 - Clean & Full-Text for X) -->
 <div class="layout layout--col bg--white p--0" style="height: 100%; border: 1px solid rgba(0,0,0,0.1); position: relative;">
   
-  <!-- 
-    STANDARD HARDWARE LAYOUT (Full-Bleed Poster)
-  -->
+  <!-- STANDARD HARDWARE LAYOUT (Full-Bleed Poster) -->
   <div class="lg:hidden h--full w--full overflow--hidden no-shrink" style="position: relative;">
     <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
 
@@ -24,9 +22,7 @@
     </div>
   </div>
 
-  <!-- 
-    TRMNL X HARDWARE LAYOUT (70/30 Dominant Image Split)
-  -->
+  <!-- TRMNL X HARDWARE LAYOUT (70/30 - Borderless & Full Text) -->
   <div class="hidden lg:flex flex--col h--full w--full">
     <!-- Image Top (70%) -->
     <div class="h--[70cqh] w--full overflow--hidden no-shrink" style="position: relative;">
@@ -39,17 +35,19 @@
         </div>
       </div>
 
-      <!-- Balanced Corner Branding (w--16 / 64px) -->
+      <!-- Branding Overlay -->
       <div style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 8px; z-index: 3;">
         <img src="{{ logo_url }}" class="image image-dither w--16 h--16" style="background: white; padding: 2px; border: 1px solid black;" />
         <img src="{{ qr_url }}" class="image w--16 h--16" style="background: white; padding: 2px; border: 1px solid black;" />
       </div>
     </div>
 
-    <!-- Content Bottom (30%) -->
-    <div class="flex flex--col grow p--3 justify--top" style="text-align: left; background-color: white; border-top: 2px solid black;">
-      <div class="title title--small text--black" style="font-family: serif; font-style: italic; font-weight: bold; opacity: 0.9; margin-bottom: 4px;">{{ archive_date }}</div>
-      <div class="description description--large text--black" style="font-family: serif; font-style: italic; line-height: 1.2;">{{ description | truncate: 120 }}</div>
+    <!-- Content Bottom (30%) - No border, Tight Spacing -->
+    <div class="flex flex--col grow p--2 lg:p--3 justify--top" style="text-align: left; background-color: white;">
+      <!-- Date: Bold Serif Italic -->
+      <div style="font-family: serif; font-style: italic; font-weight: bold; font-size: 16px; color: black; opacity: 0.9; margin-bottom: 2px; width: 100%;">{{ archive_date }}</div>
+      <!-- Description: Full Text, Left-Aligned -->
+      <div class="description description--large text--black" style="font-family: serif; font-style: italic; line-height: 1.25;">{{ description }}</div>
     </div>
   </div>
 
