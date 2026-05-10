@@ -1,0 +1,41 @@
+# TRMNL Tedium: Plugin Form Fields
+# Copy and paste this YAML into the "Form Fields" section of your TRMNL Plugin dashboard.
+
+- keyname: article_mode
+  field_type: select
+  name: Display Mode
+  description: Choose which article to show on your screen.
+  options:
+    - label: Random Article
+      value: random
+    - label: Latest Article
+      value: latest
+  default: random
+
+- keyname: show_branding
+  field_type: boolean
+  name: Show Logo & QR
+  description: Toggle the visibility of the Tedium logo and article QR code.
+  default: true
+
+- keyname: image_opacity
+  field_type: select
+  name: Background Opacity
+  description: Adjust how much the background image shows through.
+  options:
+    - label: Light (50%)
+      value: '0.5'
+    - label: Medium (70%)
+      value: '0.7'
+    - label: Strong (90%)
+      value: '0.9'
+  default: '0.7'
+
+# --- RECIPE METADATA (For publishing to the Recipe library) ---
+# These are often separate fields in the Recipe submission form:
+#
+# Author Name: [Your Name]
+# Author Bio: An application for the TRMNL screen that displays a random article from Tedium.co.
+# Author URL: [Your Github/Website]
+# Categories: Lifestyle, Entertainment, News
+# Plugin Description: Rediscover the history of boring things with daily articles from the Tedium archive.

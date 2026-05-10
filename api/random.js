@@ -24,6 +24,8 @@ module.exports = async function handler(req, res) {
 
   // Handle 'article_mode' from TRMNL Form Fields (Random or Latest)
   const mode = req.query.article_mode || req.query.mode;
+  const show_branding = req.query.show_branding !== 'false';
+  const image_opacity = req.query.image_opacity || '0.7';
   let article;
   
   if (mode === 'latest') {
@@ -45,6 +47,8 @@ module.exports = async function handler(req, res) {
     qr_url: `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(article.url)}`,
     archive_date: new URL(article.url).pathname.split('/').slice(1,4).join('/'),
     favicon: `${protocol}://${host}/favicon.ico`,
-    logo_url: `${protocol}://${host}/resources/t-logo_v3_square.jpg`
+    logo_url: `${protocol}://${host}/resources/t-logo_v3_square.jpg`,
+    show_branding: show_branding,
+    image_opacity: image_opacity
   });
 };
