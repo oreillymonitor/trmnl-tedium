@@ -1,25 +1,25 @@
-<!-- HALF HORIZONTAL VIEW (Refined) -->
+<!-- HALF HORIZONTAL VIEW (Fixed 50/50 Split & Right-Aligned) -->
 <div class="layout layout--row bg--white p--0" style="height: 100%;">
-  <!-- Image: Occupies 50% of the screen -->
-  <div class="w--[50cqw] h--full overflow--hidden">
+  <!-- Image: Forced 50% of the screen -->
+  <div class="w--[50cqw] h--full overflow--hidden no-shrink">
     <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
   </div>
 
-  <!-- Content: Occupies the other 50% -->
-  <div class="flex flex--col grow p--4 justify--between" style="height: 100%;">
-    <div class="flex flex--col" style="text-align: left;">
+  <!-- Content: Forced 50% of the screen, Right-Aligned -->
+  <div class="w--[50cqw] h--full flex flex--col p--4 justify--between no-shrink">
+    <div class="flex flex--col" style="text-align: right; width: 100%;">
       <!-- Title -->
-      <div class="title title--medium text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
+      <div class="title title--medium text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; text-align: right; width: 100%;">{{ title }}</div>
       
-      <!-- Date: Positioned between title and description -->
-      <div class="label label--tiny text--black" style="margin: 8px 0; opacity: 0.7; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 4px; letter-spacing: 1px;">{{ archive_date }}</div>
+      <!-- Date: Right-aligned border/padding -->
+      <div class="label label--tiny text--black" style="margin: 8px 0; opacity: 0.7; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 4px; letter-spacing: 1px; text-align: right; width: 100%;">{{ archive_date }}</div>
       
-      <!-- Description: Full display, no truncation -->
-      <div class="description description--base text--black" style="line-height: 1.3;">{{ description }}</div>
+      <!-- Description -->
+      <div class="description description--base text--black" style="line-height: 1.3; text-align: right; width: 100%;">{{ description }}</div>
     </div>
 
-    <!-- Branding: Centered logo and QR code -->
-    <div class="flex flex--row flex--center gap--medium mt--2" style="width: 100%;">
+    <!-- Branding: Right-aligned logo and QR code -->
+    <div class="flex flex--row flex--right gap--medium mt--2" style="width: 100%;">
       <img src="{{ logo_url }}" class="image image-dither w--14 h--14" style="border: 1px solid rgba(0,0,0,0.1);" />
       <img src="{{ qr_url }}" class="image w--14 h--14" style="border: 1px solid rgba(0,0,0,0.1);" />
     </div>
