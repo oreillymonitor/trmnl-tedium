@@ -1,17 +1,18 @@
-<!-- HALF HORIZONTAL VIEW (Gap Fix) -->
-<div class="layout layout--row p--0" style="height: 100%;">
+<!-- HALF HORIZONTAL VIEW (Definitive Gap Fix) -->
+<div class="layout layout--row p--0" style="height: 100%; background-color: black;">
   
   <!-- Image Column (50%) -->
   <div class="w--[50cqw] h--full overflow--hidden no-shrink" style="position: relative;">
-    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
-    <div style="position: absolute; bottom: 8px; left: 8px; display: flex; flex-direction: column; gap: 8px; z-index: 2;">
+    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }}; display: block;" />
+    <div style="position: absolute; bottom: 10px; left: 10px; display: flex; flex-direction: column; gap: 8px; z-index: 2;">
       <img src="{{ logo_url }}" class="image image-dither w--12 h--12 lg:w--24 lg:h--24" style="background: white; padding: 2px; border: 1px solid black;" />
       <img src="{{ qr_url }}" class="image w--12 h--12 lg:w--24 lg:h--24" style="background: white; padding: 2px; border: 1px solid black;" />
     </div>
   </div>
 
-  <!-- COLOR CONTENT COLUMN (Added margin-left: -1px to close the gap) -->
-  <div class="w--[50cqw] h--full flex flex--col flex--align-start p--4 justify--top no-shrink 1bit:hidden lg:hidden" style="background-color: #D65A62; text-align: left; margin-left: -1px;">
+  <!-- COLOR CONTENT COLUMN (Outline fix for gaps) -->
+  <div class="w--[50cqw] h--full flex flex--col flex--align-start p--4 justify--top no-shrink 1bit:hidden lg:hidden" 
+       style="background-color: #D65A62; text-align: left; outline: 1px solid #D65A62; position: relative; z-index: 2;">
     <div class="flex flex--col flex--align-start" style="text-align: left; width: 100%;">
       <div class="text--left" style="font-family: serif; font-style: italic; font-weight: bold; font-size: 14px; color: white; opacity: 0.9; margin-bottom: 4px; width: 100%; text-align: left;">{{ archive_date }}</div>
       <div class="title title--medium text--left" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 4px; color: white; text-align: left;">{{ title }}</div>
@@ -19,14 +20,12 @@
     </div>
   </div>
 
-  <!-- MONOCHROME CONTENT COLUMN (Added margin-left: -1px to close the gap) -->
-  <div class="w--[50cqw] h--full hidden 1bit:flex lg:flex flex--col flex--align-start p--4 lg:p--8 justify--top no-shrink" style="background-color: white; text-align: left; margin-left: -1px;">
+  <!-- MONOCHROME CONTENT COLUMN (Outline fix for gaps) -->
+  <div class="w--[50cqw] h--full hidden 1bit:flex lg:flex flex--col flex--align-start p--4 lg:p--8 justify--top no-shrink" 
+       style="background-color: white; text-align: left; outline: 1px solid white; position: relative; z-index: 2;">
     <div class="flex flex--col flex--align-start" style="text-align: left; width: 100%;">
-      <!-- Date -->
       <div class="lg:title--large text--left" style="font-family: serif; font-style: italic; font-weight: bold; font-size: 14px; color: black; opacity: 0.8; margin-bottom: 4px; width: 100%; text-align: left;">{{ archive_date }}</div>
-      <!-- Title -->
       <div class="title title--medium lg:title--xxlarge text--black text--left" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 4px; text-align: left;">{{ title }}</div>
-      <!-- Description -->
       <div class="description description--large lg:description--xxlarge text--black text--left" style="font-family: serif; font-style: italic; line-height: 1.3; width: 100%; margin-top: 10px; text-align: left;">{{ description }}</div>
     </div>
   </div>
