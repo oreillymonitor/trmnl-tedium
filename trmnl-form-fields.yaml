@@ -1,6 +1,13 @@
 # TRMNL Tedium: Plugin Form Fields
 # Copy and paste this YAML into the "Form Fields" section of your TRMNL Plugin dashboard.
 
+- keyname: author_bio
+  name: TRMNL Tedium
+  field_type: author_bio
+  description: "Rediscover the history of boring things. Displays a random featured article from Tedium.co. Report issues via GitHub."
+  github_url: "https://github.com/oreillymonitor/trmnl-tedium"
+  category: news, lifestyle
+
 - keyname: article_mode
   name: Display Mode
   field_type: select
