@@ -1,5 +1,5 @@
-<!-- HALF HORIZONTAL VIEW (Definitive Gap Fix) -->
-<div class="layout layout--row p--0" style="height: 100%; background-color: black;">
+<!-- HALF HORIZONTAL VIEW (Color-Matched Gap Fix) -->
+<div class="layout layout--row p--0" style="height: 100%; background-color: white;">
   
   <!-- Image Column (50%) -->
   <div class="w--[50cqw] h--full overflow--hidden no-shrink" style="position: relative;">
@@ -10,9 +10,9 @@
     </div>
   </div>
 
-  <!-- COLOR CONTENT COLUMN (Outline fix for gaps) -->
+  <!-- COLOR CONTENT COLUMN (Crimson Outline to close gap with Crimson) -->
   <div class="w--[50cqw] h--full flex flex--col flex--align-start p--4 justify--top no-shrink 1bit:hidden lg:hidden" 
-       style="background-color: #D65A62; text-align: left; outline: 1px solid #D65A62; position: relative; z-index: 2;">
+       style="background-color: #D65A62; text-align: left; outline: 2px solid #D65A62; margin-left: -1px; position: relative; z-index: 2;">
     <div class="flex flex--col flex--align-start" style="text-align: left; width: 100%;">
       <div class="text--left" style="font-family: serif; font-style: italic; font-weight: bold; font-size: 14px; color: white; opacity: 0.9; margin-bottom: 4px; width: 100%; text-align: left;">{{ archive_date }}</div>
       <div class="title title--medium text--left" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 4px; color: white; text-align: left;">{{ title }}</div>
@@ -20,9 +20,9 @@
     </div>
   </div>
 
-  <!-- MONOCHROME CONTENT COLUMN (Outline fix for gaps) -->
+  <!-- MONOCHROME CONTENT COLUMN (Gap will be White because parent background is white) -->
   <div class="w--[50cqw] h--full hidden 1bit:flex lg:flex flex--col flex--align-start p--4 lg:p--8 justify--top no-shrink" 
-       style="background-color: white; text-align: left; outline: 1px solid white; position: relative; z-index: 2;">
+       style="background-color: white; text-align: left; position: relative; z-index: 2;">
     <div class="flex flex--col flex--align-start" style="text-align: left; width: 100%;">
       <div class="lg:title--large text--left" style="font-family: serif; font-style: italic; font-weight: bold; font-size: 14px; color: black; opacity: 0.8; margin-bottom: 4px; width: 100%; text-align: left;">{{ archive_date }}</div>
       <div class="title title--medium lg:title--xxlarge text--black text--left" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 4px; text-align: left;">{{ title }}</div>
