@@ -1,29 +1,28 @@
-<!-- QUADRANT VIEW (1/4 Screen) -->
+<!-- QUADRANT VIEW (70/30 Split for Standard, 50/50 for X) -->
 <div class="layout layout--col bg--white p--0" style="height: 100%; border: 1px solid rgba(0,0,0,0.1);">
   
-  <!-- Image/Branding Area: Top 50% of the quadrant -->
-  <div class="h--[50cqh] w--full overflow--hidden no-shrink" style="position: relative;">
-    <!-- Background GIF: Only visible if meaningful at this size -->
+  <!-- Image Area: 70% on standard, 50% on LG (X) -->
+  <div class="h--[70cqh] lg:h--[50cqh] w--full overflow--hidden no-shrink" style="position: relative;">
     <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
     
-    <!-- Branding Overlay: Precision balanced at smaller sizes -->
-    <div style="position: absolute; bottom: 5px; right: 5px; display: flex; gap: 4px; z-index: 2;">
-      <img src="{{ logo_url }}" class="image image-dither w--8 h--8 lg:w--16 lg:h--16" style="background: white; padding: 1px; border: 1px solid black;" />
-      <img src="{{ qr_url }}" class="image w--8 h--8 lg:w--16 lg:h--16" style="background: white; padding: 1px; border: 1px solid black;" />
+    <!-- Branding Overlay: Matched to Half-View sizes (w--12 / lg:w--24) -->
+    <div style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 8px; z-index: 2;">
+      <img src="{{ logo_url }}" class="image image-dither w--12 h--12 lg:w--24 lg:h--24" style="background: white; padding: 2px; border: 1px solid black;" />
+      <img src="{{ qr_url }}" class="image w--12 h--12 lg:w--24 lg:h--24" style="background: white; padding: 2px; border: 1px solid black;" />
     </div>
   </div>
 
-  <!-- Content Area: Bottom 50% of the quadrant -->
+  <!-- Content Area: 30% on standard, 50% on LG (X) -->
   <div class="flex flex--col grow p--2 lg:p--4 justify--top" style="text-align: left;">
     
     <!-- Date: Visible only on TRMNL X (lg) -->
-    <div class="hidden lg:block lg:title--small" style="font-family: serif; font-style: italic; font-weight: bold; color: black; opacity: 0.8; margin-bottom: 2px;">{{ archive_date }}</div>
+    <div class="hidden lg:block lg:title--small" style="font-family: serif; font-style: italic; font-weight: bold; color: black; opacity: 0.8; margin-bottom: 4px;">{{ archive_date }}</div>
 
-    <!-- Title: Serif Bold Italic, scaled for small space -->
-    <div class="title title--small lg:title--medium text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 2px;">{{ title }}</div>
+    <!-- Title: title--base for standard, title--medium for X -->
+    <div class="title title--base lg:title--medium text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 4px;">{{ title }}</div>
     
     <!-- Description: Visible only on TRMNL X (lg) -->
-    <div class="hidden lg:block lg:description--base text--black" style="font-family: serif; font-style: italic; line-height: 1.2; margin-top: 5px;">{{ description | truncate: 100 }}</div>
+    <div class="hidden lg:block lg:description--base text--black" style="font-family: serif; font-style: italic; line-height: 1.2; margin-top: 8px;">{{ description | truncate: 100 }}</div>
     
   </div>
 </div>
