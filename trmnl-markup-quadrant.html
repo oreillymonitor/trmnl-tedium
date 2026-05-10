@@ -1,17 +1,14 @@
-<!-- QUADRANT VIEW (v22 - Robust Dual Layout) -->
+<!-- QUADRANT VIEW (v23 - Final Proportions) -->
 <div class="layout layout--col bg--white p--0" style="height: 100%; border: 1px solid rgba(0,0,0,0.1); position: relative;">
   
   <!-- 
     STANDARD HARDWARE LAYOUT (Full-Bleed Poster)
-    - Shown on standard screens
-    - Hidden on TRMNL X (lg)
   -->
   <div class="lg:hidden h--full w--full overflow--hidden no-shrink" style="position: relative;">
     <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
 
-    <!-- Overlay Box -->
+    <!-- Title Overlay -->
     <div class="flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 10px;">
-      <!-- Color Logic -->
       <div class="1bit:hidden" style="background-color: rgba(214, 90, 98, 0.9); width: 92%; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.3);">
         <div class="title title--base" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1;">{{ title }}</div>
       </div>
@@ -28,13 +25,11 @@
   </div>
 
   <!-- 
-    TRMNL X HARDWARE LAYOUT (40/60 Balanced Split)
-    - Hidden by default
-    - Visible ONLY on TRMNL X (lg)
+    TRMNL X HARDWARE LAYOUT (70/30 Dominant Image Split)
   -->
   <div class="hidden lg:flex flex--col h--full w--full">
-    <!-- Image Top (40%) -->
-    <div class="h--[40cqh] w--full overflow--hidden no-shrink" style="position: relative;">
+    <!-- Image Top (70%) -->
+    <div class="h--[70cqh] w--full overflow--hidden no-shrink" style="position: relative;">
       <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
       
       <!-- Title Box on Image -->
@@ -44,17 +39,17 @@
         </div>
       </div>
 
-      <!-- Corner Branding -->
+      <!-- Balanced Corner Branding (w--16 / 64px) -->
       <div style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 8px; z-index: 3;">
-        <img src="{{ logo_url }}" class="image image-dither w--24 h--24" style="background: white; padding: 2px; border: 1px solid black;" />
-        <img src="{{ qr_url }}" class="image w--24 h--24" style="background: white; padding: 2px; border: 1px solid black;" />
+        <img src="{{ logo_url }}" class="image image-dither w--16 h--16" style="background: white; padding: 2px; border: 1px solid black;" />
+        <img src="{{ qr_url }}" class="image w--16 h--16" style="background: white; padding: 2px; border: 1px solid black;" />
       </div>
     </div>
 
-    <!-- Content Bottom (60%) -->
-    <div class="flex flex--col grow p--4 justify--top" style="text-align: left; background-color: white; border-top: 2px solid black;">
-      <div class="title title--base text--black" style="font-family: serif; font-style: italic; font-weight: bold; opacity: 0.9; margin-bottom: 8px;">May 10, 2026</div>
-      <div class="description description--xlarge text--black" style="font-family: serif; font-style: italic; line-height: 1.3;">{{ description | truncate: 160 }}</div>
+    <!-- Content Bottom (30%) -->
+    <div class="flex flex--col grow p--3 justify--top" style="text-align: left; background-color: white; border-top: 2px solid black;">
+      <div class="title title--small text--black" style="font-family: serif; font-style: italic; font-weight: bold; opacity: 0.9; margin-bottom: 4px;">{{ archive_date }}</div>
+      <div class="description description--large text--black" style="font-family: serif; font-style: italic; line-height: 1.2;">{{ description | truncate: 120 }}</div>
     </div>
   </div>
 
