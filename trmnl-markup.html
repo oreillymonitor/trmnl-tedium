@@ -1,20 +1,15 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v12 - TRMNL X Optimized)
+  TEDIUM EDITORIAL POSTER (v13 - TRMNL X Branding Max)
   - Full-screen background
   - Large-screen (lg) optimizations for TRMNL X
-  - Unified White Box aesthetic for both 1bit and X (4bit)
-  - Scaled branding for larger displays
+  - Max impact branding for X (120px)
 -->
 
 <div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
   <!-- Background Layer -->
   <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.7;" />
   
-  <!-- 
-    CRIMSON BOX (COLOR DEVICES ONLY)
-    - Shown on 2bit (Color/BWRY)
-    - Hidden on 1bit (Monochrome) and LG (TRMNL X)
-  -->
+  <!-- CRIMSON BOX (COLOR DEVICES ONLY) -->
   <div class="flex flex--col flex--center 1bit:hidden lg:hidden" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 15px;">
     <div style="background-color: rgba(214, 90, 98, 0.95); width: 82%; padding: 12px 20px; border: 2px solid rgba(255,255,255,0.3); position: relative;">
       <div class="flex flex--col grow" style="text-align: left;">
@@ -24,13 +19,8 @@
     </div>
   </div>
 
-  <!-- 
-    WHITE BOX (MONOCHROME & TRMNL X)
-    - Visible on 1bit
-    - Visible on LG (TRMNL X)
-  -->
+  <!-- WHITE BOX (MONOCHROME & TRMNL X) -->
   <div class="hidden 1bit:flex lg:flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; padding: 15px;">
-    <!-- Adaptive width/padding for LG -->
     <div class="lg:w--[75%] lg:padding--[30px]" style="background-color: rgba(255, 255, 255, 0.95); width: 82%; padding: 12px 20px; border: 4px solid black; position: relative;">
       <div class="flex flex--col grow" style="text-align: left;">
         <div class="title title--large lg:title--xxlarge text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; margin-bottom: 5px;">{{ title }}</div>
@@ -40,13 +30,13 @@
   </div>
 
   <!-- BRANDING LAYER (Bottom Right Alignment) -->
-  <div style="position: absolute; bottom: 20px; right: 20px; display: flex; gap: 15px; align-items: center; z-index: 4;">
+  <div style="position: absolute; bottom: 20px; right: 20px; display: flex; gap: 20px; align-items: center; z-index: 4;">
     
-    <!-- Tedium Logo: 70px on OG, 100px on TRMNL X -->
-    <img src="{{ logo_url }}" class="image image-dither lg:w--[100px] lg:h--[100px]" style="width: 70px; height: 70px; border: 1px solid rgba(255,255,255,0.2);" />
+    <!-- Tedium Logo: 70px on OG, 120px on TRMNL X -->
+    <img src="{{ logo_url }}" class="image image-dither lg:w--[120px] lg:h--[120px]" style="width: 70px; height: 70px; border: 1px solid rgba(255,255,255,0.2);" />
 
-    <!-- QR Code: 70px on OG, 100px on TRMNL X -->
-    <img src="{{ qr_url }}" class="image lg:w--[100px] lg:h--[100px]" style="width: 70px; height: 70px; border: 1px solid rgba(255,255,255,0.2);" />
+    <!-- QR Code: 70px on OG, 120px on TRMNL X -->
+    <img src="{{ qr_url }}" class="image lg:w--[120px] lg:h--[120px]" style="width: 70px; height: 70px; border: 1px solid rgba(255,255,255,0.2);" />
 
   </div>
 </div>
