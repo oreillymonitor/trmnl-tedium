@@ -1,19 +1,16 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v6 - Branded & Balanced)
+  TEDIUM EDITORIAL POSTER (v7 - Final Fixes)
   - Full-screen background
   - QR Code in bottom right
-  - Logo in bottom left
-  - Centered editorial box for text
+  - Logo in bottom left (Added dithering class)
+  - Centered editorial box
 -->
 
 <div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
   <!-- Background Layer -->
   <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.7;" />
   
-  <!-- 
-    COLOR/ADVANCED DEVICE BOX 
-    - Floating centered text box
-  -->
+  <!-- COLOR/ADVANCED DEVICE BOX -->
   <div class="flex flex--col flex--center 1bit:hidden" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 20px;">
     <div style="background-color: rgba(214, 90, 98, 0.9); width: 85%; padding: 30px 40px; border: 2px solid rgba(255,255,255,0.3);">
       <div class="flex flex--col grow" style="text-align: left;">
@@ -23,9 +20,7 @@
     </div>
   </div>
 
-  <!-- 
-    MONOCHROME (1BIT) DEVICE BOX 
-  -->
+  <!-- MONOCHROME (1BIT) DEVICE BOX -->
   <div class="hidden 1bit:flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; padding: 20px;">
     <div style="background-color: rgba(255, 255, 255, 0.9); width: 85%; padding: 30px 40px; border: 4px solid black;">
       <div class="flex flex--col grow" style="text-align: left;">
@@ -38,12 +33,12 @@
   <!-- BRANDING LAYER (Bottom Corners) -->
   <div style="position: absolute; bottom: 15px; left: 15px; right: 15px; display: flex; justify-content: space-between; align-items: flex-end; z-index: 4;">
     
-    <!-- Bottom Left: Tedium Logo -->
+    <!-- Bottom Left: Tedium Logo (Added image-dither for 1bit visibility) -->
     <div style="background: white; padding: 4px; border: 2px solid black;">
-      <img src="{{ logo_url }}" class="image" style="width: 60px; height: 60px; display: block;" />
+      <img src="{{ logo_url }}" class="image image-dither" style="width: 60px; height: 60px; display: block;" />
     </div>
 
-    <!-- Center-ish Meta Tag (slightly offset to accommodate logo/qr) -->
+    <!-- Center-ish Meta Tag -->
     <div style="background: rgba(0,0,0,0.6); padding: 4px 10px; border-radius: 4px; margin-bottom: 5px;">
       <span class="label label--tiny" style="color: white; opacity: 0.9; letter-spacing: 1px;">TEDIUM // {{ archive_date }}</span>
     </div>
