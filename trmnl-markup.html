@@ -1,32 +1,46 @@
 <!-- 
-  TEDIUM POSTER VIEW
-  Full-screen image with a title box overlay.
-  Note: No <html>, <body>, or <div class="view"> tags.
+  TEDIUM EDITORIAL THUMBNAIL VIEW
+  Matches the JSON specification:
+  - 16:9 Aspect Ratio Focus
+  - Grayscale Background Layer
+  - Muted Crimson Overlay (#D65A62)
+  - Bold Italic Serif Typography
 -->
 
-<div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden;">
-  <!-- Full Screen Background Image -->
-  <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" />
+<div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
+  <!-- Background Layer: Grayscale Image -->
+  <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.8;" />
   
-  <!-- Overlay Content -->
-  <div class="flex flex--col flex--center-x flex--center-y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 40px;">
+  <!-- Overlay Element Container -->
+  <div class="flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
     
-    <!-- Title Box (The Tedium Look) -->
-    <div class="bg--white" style="border: 4px solid black; padding: 30px; box-shadow: 12px 12px 0px black; max-width: 90%; min-width: 60%;">
-      <div class="title title--xlarge" style="line-height: 1.1; color: black; font-weight: bold;">{{ title }}</div>
+    <!-- Red Rectangular Text Box (Muted Crimson) -->
+    <!-- Using inline background color for TRMNL X (color) compatibility -->
+    <div style="background-color: #D65A62; width: 75%; padding: 25px 40px; position: relative; box-shadow: 10px 10px 20px rgba(0,0,0,0.5);">
       
-      <div class="flex flex--row flex--between flex--align-end" style="margin-top: 25px;">
-        <div class="flex flex--col">
-          <span class="label label--small" style="color: black; font-weight: bold; text-transform: uppercase;">Tedium Archive</span>
-          <span class="label label--small" style="color: black;">{{ archive_date }}</span>
+      <div class="flex flex--row flex--between flex--align-center">
+        <!-- Typography: Serif, Bold, Italic -->
+        <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.2; flex-grow: 1; text-align: left;">
+          {{ title }}
         </div>
-        
-        <!-- QR Code -->
-        <div style="background: white; padding: 4px; border: 2px solid black; margin-left: 20px;">
-          <img src="{{ qr_url }}" class="image" style="width: 60px; height: 60px; display: block;" />
+
+        <!-- Subtle White QR Code for contrast on red -->
+        <div style="background: white; padding: 3px; margin-left: 20px; border: 1px solid white;">
+          <img src="{{ qr_url }}" class="image" style="width: 55px; height: 55px; display: block;" />
         </div>
+      </div>
+
+      <!-- Optional Archive Date Tag -->
+      <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 5px;">
+        <span class="label label--small" style="color: white; opacity: 0.9; letter-spacing: 1px; font-weight: bold;">TEDIUM // {{ archive_date }}</span>
       </div>
     </div>
     
   </div>
+</div>
+
+<div class="title_bar">
+  <img class="image" src="{{ favicon }}">
+  <span class="title">TEDIUM</span>
+  <span class="instance">Random Archive</span>
 </div>
