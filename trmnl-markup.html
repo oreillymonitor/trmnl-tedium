@@ -1,44 +1,39 @@
 <!-- 
-  TEDIUM TRUE FULL-SCREEN POSTER VIEW
-  - No title bar
-  - Background image fills 100% of the screen (cover/crop)
-  - Editorial overlay centered on top
+  TEDIUM POSTER VIEW (Legibility Focus)
+  - Full-screen background image
+  - Larger, non-truncated description
+  - Removed archive/date footer to maximize space
 -->
 
 <div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
-  <!-- Full Screen Background Image (Stretches and crops as needed) -->
+  <!-- Full Screen Background Image -->
   <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.8;" />
   
   <!-- Overlay Content -->
-  <div class="flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 30px;">
+  <div class="flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 20px;">
     
     <!-- Editorial Box (90% Opacity) -->
-    <div style="background-color: rgba(214, 90, 98, 0.9); width: 85%; padding: 30px 40px; position: relative; box-shadow: 15px 15px 35px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.2);">
+    <div style="background-color: rgba(214, 90, 98, 0.9); width: 90%; padding: 30px 40px; position: relative; box-shadow: 15px 15px 40px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.2);">
       
       <div class="flex flex--row flex--between flex--top">
         <div class="flex flex--col grow">
           <!-- Title: Serif, Bold, Italic -->
-          <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; text-align: left;">
+          <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; text-align: left; margin-bottom: 15px;">
             {{ title }}
           </div>
           
-          <!-- Description -->
-          <div class="description description--small" data-clamp="2" style="color: white; margin-top: 12px; opacity: 0.95; line-height: 1.4;">
+          <!-- Description: Increased size and NO truncation -->
+          <div class="description description--large" style="color: white; opacity: 1; line-height: 1.3; text-align: left;">
             {{ description }}
           </div>
         </div>
 
-        <!-- QR Code -->
-        <div class="no-shrink" style="background: white; padding: 4px; margin-left: 25px; border: 1px solid white;">
-          <img src="{{ qr_url }}" class="image" style="width: 70px; height: 70px; display: block;" />
+        <!-- QR Code: Slightly larger to match the larger box -->
+        <div class="no-shrink" style="background: white; padding: 5px; margin-left: 25px; border: 1px solid white;">
+          <img src="{{ qr_url }}" class="image" style="width: 80px; height: 80px; display: block;" />
         </div>
       </div>
-
-      <!-- Bottom Meta Line inside the box -->
-      <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
-        <span class="label label--small" style="color: white; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Tedium Archive</span>
-        <span class="label label--small" style="color: white; opacity: 0.8;">{{ archive_date }}</span>
-      </div>
+      
     </div>
     
   </div>
