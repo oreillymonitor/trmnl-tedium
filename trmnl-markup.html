@@ -1,24 +1,21 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v4 - Device Targeted)
-  - Full-screen background
-  - Color-aware overlay (Crimson on Color, White on 1bit)
+  TEDIUM EDITORIAL POSTER (v5 - Authentic Style)
+  - No shadows
+  - 90% Opacity on both boxes
+  - Strict left-alignment
 -->
 
 <div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
   <!-- Background Layer -->
   <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.7;" />
   
-  <!-- 
-    COLOR/ADVANCED DEVICE BOX 
-    - Shown on 2bit and 4bit+
-    - Hidden on 1bit
-  -->
+  <!-- COLOR/ADVANCED DEVICE BOX (Hidden on 1bit) -->
   <div class="flex flex--col flex--center 1bit:hidden" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 20px;">
-    <div style="background-color: rgba(214, 90, 98, 0.95); width: 85%; padding: 25px 35px; box-shadow: 15px 15px 40px rgba(0,0,0,0.8); border: 2px solid rgba(255,255,255,0.2);">
+    <div style="background-color: rgba(214, 90, 98, 0.9); width: 85%; padding: 25px 35px; border: 2px solid rgba(255,255,255,0.3);">
       <div class="flex flex--row flex--between flex--top">
-        <div class="flex flex--col grow">
-          <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; margin-bottom: 10px;">{{ title }}</div>
-          <div class="description description--base" style="color: white; line-height: 1.3;">{{ description }}</div>
+        <div class="flex flex--col grow" style="text-align: left;">
+          <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; margin-bottom: 10px; text-align: left; width: 100%;">{{ title }}</div>
+          <div class="description description--base" style="color: white; line-height: 1.3; text-align: left; width: 100%;">{{ description }}</div>
         </div>
         <div class="no-shrink" style="padding: 4px; margin-left: 20px; background: white; border: 1px solid white;">
           <img src="{{ qr_url }}" class="image" style="width: 65px; height: 65px; display: block;" />
@@ -27,17 +24,14 @@
     </div>
   </div>
 
-  <!-- 
-    MONOCHROME (1BIT) DEVICE BOX 
-    - Hidden by default
-    - Visible ONLY on 1bit
-  -->
+  <!-- MONOCHROME (1BIT) DEVICE BOX (Visible ONLY on 1bit) -->
   <div class="hidden 1bit:flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; padding: 20px;">
-    <div class="bg--white" style="width: 85%; padding: 25px 35px; border: 4px solid black; box-shadow: 12px 12px 0px black;">
+    <!-- Added 90% opacity to white box -->
+    <div style="background-color: rgba(255, 255, 255, 0.9); width: 85%; padding: 25px 35px; border: 4px solid black;">
       <div class="flex flex--row flex--between flex--top">
-        <div class="flex flex--col grow">
-          <div class="title title--large text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; margin-bottom: 10px;">{{ title }}</div>
-          <div class="description description--base text--black" style="line-height: 1.3;">{{ description }}</div>
+        <div class="flex flex--col grow" style="text-align: left;">
+          <div class="title title--large text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; margin-bottom: 10px; text-align: left; width: 100%;">{{ title }}</div>
+          <div class="description description--base text--black" style="line-height: 1.3; text-align: left; width: 100%;">{{ description }}</div>
         </div>
         <div class="no-shrink" style="padding: 4px; margin-left: 20px; border: 2px solid black; background: white;">
           <img src="{{ qr_url }}" class="image" style="width: 65px; height: 65px; display: block;" />
