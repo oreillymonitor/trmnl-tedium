@@ -1,19 +1,28 @@
-<!-- HALF VERTICAL VIEW (Left or Right half) -->
-<div class="layout layout--col bg--white p--0" style="height: 100%; border-right: 2px solid black;">
-  <div class="h--[35cqh] w--full overflow--hidden">
-    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: 0.8;" />
+<!-- HALF VERTICAL VIEW (Image Top, Text Bottom) -->
+<div class="layout layout--col bg--white p--0" style="height: 100%;">
+  
+  <!-- Image Area: Top ~40% of the screen -->
+  <div class="h--[40cqh] w--full overflow--hidden no-shrink" style="position: relative;">
+    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: {{ image_opacity | default: 0.8 }};" />
+    
+    <!-- Branding Overlay (Side-by-side in bottom-right of image) -->
+    <div style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 8px; z-index: 2;">
+      <img src="{{ logo_url }}" class="image image-dither w--12 h--12 lg:w--24 lg:h--24" style="background: white; padding: 2px; border: 1px solid black;" />
+      <img src="{{ qr_url }}" class="image w--12 h--12 lg:w--24 lg:h--24" style="background: white; padding: 2px; border: 1px solid black;" />
+    </div>
   </div>
-  <div class="flex flex--col grow p--4 justify--between">
-    <div>
-      <div class="title title--base text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
-      <div class="description description--small text--black mt--2" data-clamp="3">{{ description }}</div>
-    </div>
-    <div class="flex flex--col flex--align-center gap--small mt--3">
-      <div class="flex gap--small">
-        <img src="{{ logo_url }}" class="image image-dither w--14 h--14" />
-        <img src="{{ qr_url }}" class="image w--14 h--14" />
-      </div>
-      <div class="label label--tiny text--black">{{ archive_date }}</div>
-    </div>
+
+  <!-- Content Area: Bottom ~60% of the screen -->
+  <div class="flex flex--col grow p--4 lg:p--8 justify--top" style="text-align: left;">
+    
+    <!-- Date: Bold Serif Italic -->
+    <div class="lg:title--large" style="font-family: serif; font-style: italic; font-weight: bold; font-size: 14px; color: black; opacity: 0.8; margin-bottom: 4px; width: 100%;">{{ archive_date }}</div>
+
+    <!-- Title: Serif Bold Italic -->
+    <div class="title title--base lg:title--xxlarge text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; width: 100%; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 4px;">{{ title }}</div>
+    
+    <!-- Description: Serif Italic -->
+    <div class="description description--base lg:description--xlarge text--black" style="font-family: serif; font-style: italic; line-height: 1.3; margin-top: 10px; width: 100%;">{{ description }}</div>
+    
   </div>
 </div>
