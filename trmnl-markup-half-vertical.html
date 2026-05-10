@@ -1,0 +1,19 @@
+<!-- HALF VERTICAL VIEW (Left or Right half) -->
+<div class="layout layout--col bg--white p--0" style="height: 100%; border-right: 2px solid black;">
+  <div class="h--[35cqh] w--full overflow--hidden">
+    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: 0.8;" />
+  </div>
+  <div class="flex flex--col grow p--4 justify--between">
+    <div>
+      <div class="title title--base text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
+      <div class="description description--small text--black mt--2" data-clamp="3">{{ description }}</div>
+    </div>
+    <div class="flex flex--col flex--align-center gap--small mt--3">
+      <div class="flex gap--small">
+        <img src="{{ logo_url }}" class="image image-dither w--14 h--14" />
+        <img src="{{ qr_url }}" class="image w--14 h--14" />
+      </div>
+      <div class="label label--tiny text--black">{{ archive_date }}</div>
+    </div>
+  </div>
+</div>

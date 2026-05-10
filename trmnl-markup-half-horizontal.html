@@ -1,0 +1,19 @@
+<!-- HALF HORIZONTAL VIEW (Top or Bottom half) -->
+<div class="layout layout--row bg--white p--0" style="height: 100%; border-bottom: 4px solid black;">
+  <div class="w--[40cqw] h--full overflow--hidden">
+    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; opacity: 0.8;" />
+  </div>
+  <div class="flex flex--col grow p--5 justify--between">
+    <div>
+      <div class="title title--medium text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
+      <div class="description description--base text--black mt--2" data-clamp="2">{{ description }}</div>
+    </div>
+    <div class="flex flex--row flex--between flex--align-end mt--3">
+      <div class="label label--tiny text--black">{{ archive_date }}</div>
+      <div class="flex gap--small">
+        <img src="{{ logo_url }}" class="image image-dither w--14 h--14" />
+        <img src="{{ qr_url }}" class="image w--14 h--14" />
+      </div>
+    </div>
+  </div>
+</div>
