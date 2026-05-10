@@ -48,7 +48,7 @@ module.exports = async function handler(req, res) {
     archive_date: new URL(article.url).pathname.split('/').slice(1,4).join('/'),
     favicon: `${protocol}://${host}/favicon.ico`,
     logo_url: `${protocol}://${host}/resources/t-logo_v3_square.jpg`,
-    show_branding: show_branding,
+    show_branding: show_branding ? "true" : "false",
     image_opacity: image_opacity
   });
 };
