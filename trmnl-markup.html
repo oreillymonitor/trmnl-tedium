@@ -1,42 +1,32 @@
 <!-- 
-  IMPORTANT: No <html>, <body>, or <div class="view"> tags. 
-  The platform provides those. Start directly with <div class="layout"> 
+  TEDIUM POSTER VIEW
+  Full-screen image with a title box overlay.
+  Note: No <html>, <body>, or <div class="view"> tags.
 -->
 
-<div class="layout layout--col">
-  <!-- Debug at the top to ensure visibility -->
-  <div class="label label--small" style="color: #aaa; margin-bottom: 5px;">
-    DEBUG: {{ title | truncate: 20 }} | {{ archive_date }}
-  </div>
-
-  <div class="flex flex--col gap--base stretch-y">
-    <!-- Header Row -->
-    <div class="flex flex--row flex--between flex--top">
-      <span class="title title--medium grow" style="line-height: 1.2;">{{ title }}</span>
-      <img src="{{ qr_url }}" class="image no-shrink" style="width: 60px; height: 60px; margin-left: 15px;" />
+<div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden;">
+  <!-- Full Screen Background Image -->
+  <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" />
+  
+  <!-- Overlay Content -->
+  <div class="flex flex--col flex--center-x flex--center-y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 40px;">
+    
+    <!-- Title Box (The Tedium Look) -->
+    <div class="bg--white" style="border: 4px solid black; padding: 30px; box-shadow: 12px 12px 0px black; max-width: 90%; min-width: 60%;">
+      <div class="title title--xlarge" style="line-height: 1.1; color: black; font-weight: bold;">{{ title }}</div>
+      
+      <div class="flex flex--row flex--between flex--align-end" style="margin-top: 25px;">
+        <div class="flex flex--col">
+          <span class="label label--small" style="color: black; font-weight: bold; text-transform: uppercase;">Tedium Archive</span>
+          <span class="label label--small" style="color: black;">{{ archive_date }}</span>
+        </div>
+        
+        <!-- QR Code -->
+        <div style="background: white; padding: 4px; border: 2px solid black; margin-left: 20px;">
+          <img src="{{ qr_url }}" class="image" style="width: 60px; height: 60px; display: block;" />
+        </div>
+      </div>
     </div>
     
-    <!-- Description -->
-    <span class="description description--base" data-clamp="3">{{ description }}</span>
-
-    <!-- Image Area -->
-    <div class="flex flex--col flex--center stretch-y" style="overflow: hidden; margin: 10px 0;">
-      <img class="image image-dither image--contain" src="{{ image_url }}" style="max-height: 100%;" />
-    </div>
   </div>
-
-  <!-- Footer Info -->
-  <div class="flex flex--row flex--between flex--bottom" style="border-top: 1px solid var(--gray-40); padding-top: 5px;">
-    <div class="flex flex--col">
-      <span class="label label--small">TEDIUM.CO</span>
-      <span class="label label--small">{{ archive_date }}</span>
-    </div>
-    <span class="title title--small">TRMNL TEDIUM</span>
-  </div>
-</div>
-
-<div class="title_bar">
-  <img class="image" src="{{ favicon }}">
-  <span class="title">TEDIUM</span>
-  <span class="instance">Archive</span>
 </div>
