@@ -40,8 +40,8 @@ module.exports = async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   res.status(200).json({
-    title: article.title,
-    description: article.description,
+    article_title: article.title,
+    article_description: article.description,
     image_url: proxiedImageUrl,
     qr_code_url: qrCodeUrl,
     archive_path: archivePath,

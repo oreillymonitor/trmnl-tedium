@@ -2,11 +2,11 @@
   <div class="layout layout--col layout--stretch">
     <div class="flex flex--col gap--base stretch-y">
       <div class="flex flex--row flex--space-between flex--align-start">
-        <span class="title title--large stretch-x" style="line-height: 1.1;">{{ title }}</span>
+        <span class="title title--large stretch-x" style="line-height: 1.1;">{{ article_title }}</span>
         <img src="{{ qr_code_url }}" class="image" style="width: 80px; height: 80px; margin-left: 20px;" />
       </div>
       
-      <span class="description description--base" data-clamp="3">{{ description }}</span>
+      <span class="description description--base" data-clamp="3">{{ article_description }}</span>
 
       <div class="flex flex--col flex--center stretch-y" style="overflow: hidden;">
         <img class="image image-dither image--contain" src="{{ image_url }}" style="max-height: 100%;" />
