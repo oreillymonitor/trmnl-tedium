@@ -1,0 +1,53 @@
+{
+  "thumbnail_design_specification": {
+    "overall_canvas": {
+      "aspect_ratio": "16:9",
+      "color_profile": "grayscale_background_with_accent_overlay",
+      "style": "minimalist_editorial"
+    },
+    "background_layer": {
+      "filter": "grayscale",
+      "effect": "subtle_grain_texture",
+      "subjects": [
+        {
+          "image_1": "close_up_of_receipt_paper_with_numerical_data",
+          "image_2": "portrait_of_ted_turner_wearing_glasses"
+        }
+      ]
+    },
+    "overlay_element": {
+      "type": "rectangular_text_box",
+      "color": {
+        "hex": "#D65A62",
+        "description": "muted_crimson_red",
+        "opacity": "approx_90_percent"
+      },
+      "geometry": {
+        "width_percentage": "66%",
+        "height_percentage": "30%",
+        "position": "centered_vertically_and_horizontally",
+        "estimated_aspect_ratio": "4:1"
+      }
+    },
+    "typography": {
+      "font_style": "serif",
+      "font_weight": "bold_italic",
+      "color": "#FFFFFF",
+      "alignment": "left_justified",
+      "case": "title_case",
+      "padding_left": "5%"
+    },
+    "layout_measurements": [
+      {
+        "description": "Red Rectangle Dimensions",
+        "width_px_at_1280x720": "845px",
+        "height_px_at_1280x720": "216px"
+      },
+      {
+        "description": "Canvas Dimensions",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  }
+}
