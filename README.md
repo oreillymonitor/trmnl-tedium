@@ -21,7 +21,7 @@ A high-impact editorial article display for your TRMNL screen, powered by the [T
 1. Go to your [TRMNL Dashboard](https://usetrmnl.com).
 2. Create a new **Private Plugin** (Custom).
 3. **Strategy:** Select **Polling**.
-4. **Polling URL:** `https://your-project.vercel.app/api/random`
+4. **Polling URL:** `https://your-project.vercel.app/api/random?article_mode={{ article_mode }}&image_opacity={{ image_opacity }}`
 5. **Remove bleed margin?** Set to **Yes**.
 6. **Framework CSS version:** Select **3.1**.
 
