@@ -1,44 +1,39 @@
 # TRMNL Tedium
 
-A random article display for your TRMNL screen, powered by the [Tedium.co](https://tedium.co) archives.
+A high-impact editorial article display for your TRMNL screen, powered by the [Tedium.co](https://tedium.co) archives.
 
 ## Features
 
+- **Full-Screen Editorial Design:** A true full-screen "Poster View" featuring Tedium's unique grayscale aesthetic with an editorial overlay.
+- **Multi-Device Support:** Custom layouts for Color (Crimson overlay), 1-bit Monochrome (High-contrast white box), and TRMNL X (High-resolution scaling).
 - **Automated Updates:** A GitHub Action fetches the latest articles from Tedium's RSS feed daily.
-- **Historical Backlog:** Includes a script to scrape the entire Tedium archive (1,200+ articles) to seed your database.
-- **TRMNL-Ready:** A Vercel serverless function serves random articles as TRMNL-formatted HTML.
+- **Historical Backlog:** Includes a full database of **1,287+ articles** dating back to 2014.
+- **Shield & Proxy:** Uses a Vercel caching proxy to protect Tedium's bandwidth. Images are cached for 30 days.
 - **Zero Cost:** Runs entirely on GitHub Actions and Vercel's free tiers.
 
 ## Setup
 
-### 1. Initialize the Database
-1. Clone this repository.
-2. Install dependencies: `npm install`.
-3. Run the backlog scraper to populate `articles.json`:
-   ```bash
-   node scrape-backlog.js
-   ```
-   *Note: This script has a built-in delay between requests to be gentle to Tedium's servers. It may take ~20-30 minutes to scrape the full archive.*
-4. Commit and push `articles.json` to your GitHub repository.
+### 1. Deploy to Vercel
+1. Connect your fork of this repository to [Vercel](https://vercel.com).
+2. Your endpoint will be `https://your-project.vercel.app/api/random`.
 
-### 2. Deploy to Vercel
-1. Connect your GitHub repository to [Vercel](https://vercel.com).
-2. Vercel will automatically detect the `api/random.js` function.
-3. Your endpoint will be `https://your-project.vercel.app/api/random`.
-
-### 3. Configure TRMNL
+### 2. Configure TRMNL
 1. Go to your [TRMNL Dashboard](https://usetrmnl.com).
-2. Create a new **Private Plugin** (Web Content).
-3. Set the **Fetch URL** to your Vercel endpoint:
-   - For a **random article**: `https://your-project.vercel.app/api/random`
-   - For the **latest article**: `https://your-project.vercel.app/api/random?mode=latest`
-4. Set the refresh interval as desired (e.g., every hour or once a day).
+2. Create a new **Private Plugin** (Custom).
+3. **Strategy:** Select **Polling**.
+4. **Polling URL:** `https://your-project.vercel.app/api/random`
+5. **Remove bleed margin?** Set to **Yes**.
+6. **Framework CSS version:** Select **3.1**.
 
-## Technical Details
+### 3. Apply Markup
+Copy the contents of `trmnl-markup.html` from this repository and paste it into the **Markup** tab of your plugin on the TRMNL dashboard.
 
-- **Database:** Stored as a flat `articles.json` file in the repository. Latest articles are always at the top of the file.
-- **Automation:** GitHub Actions (`.github/workflows/update.yml`) runs `update-rss.js` daily.
-- **Shield & Proxy:** To protect Tedium's bandwidth, the plugin uses a caching proxy. Images are fetched once by Vercel and cached for 30 days. Even if your screen refreshes every 5 minutes, Tedium only sees one request per month for that article's image.
+## Development
+
+- **Database:** Stored as `articles.json`. Newest articles are always at the top.
+- **Updater:** `update-rss.js` (runs daily via GitHub Actions).
+- **API:** `api/random.js` (Vercel serverless function).
 
 ## Credits
 Content provided by [Tedium.co](https://tedium.co) by Ernie Smith.
+Layout designed for the TRMNL hardware framework.
