@@ -22,8 +22,11 @@ module.exports = async function handler(req, res) {
   const fileData = fs.readFileSync(filePath, 'utf8');
   let articles = JSON.parse(fileData);
 
+  // Handle 'article_mode' from TRMNL Form Fields (Random or Latest)
+  const mode = req.query.article_mode || req.query.mode;
   let article;
-  if (req.query.mode === 'latest') {
+  
+  if (mode === 'latest') {
     article = articles[0];
   } else {
     article = articles[Math.floor(Math.random() * articles.length)];
