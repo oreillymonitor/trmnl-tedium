@@ -1,18 +1,26 @@
 <div class="layout layout--col layout--stretch">
   <div class="flex flex--col gap--base stretch-y">
-    <div class="flex flex--row flex--space-between flex--align-start">
-      <span class="title title--large stretch-x" style="line-height: 1.1;">{{ title }}</span>
-      <img src="{{ qr_url }}" class="image" style="width: 80px; height: 80px; margin-left: 20px;" />
+    <!-- Header Row: Title and QR Code -->
+    <div class="flex flex--row flex--between flex--top">
+      <div class="grow">
+        <div class="title title--large" style="line-height: 1.1;">{{ title }}</div>
+      </div>
+      <div class="no-shrink" style="margin-left: 20px;">
+        <img src="{{ qr_url }}" class="image" style="width: 70px; height: 70px;" />
+      </div>
     </div>
     
-    <span class="description description--base" data-clamp="3">{{ description }}</span>
+    <!-- Description -->
+    <div class="description description--base" data-clamp="3">{{ description }}</div>
 
+    <!-- Image Area -->
     <div class="flex flex--col flex--center stretch-y" style="overflow: hidden;">
       <img class="image image-dither image--contain" src="{{ image_url }}" style="max-height: 100%;" />
     </div>
   </div>
 
-  <div class="flex flex--row flex--space-between flex--align-end" style="border-top: 1px solid var(--gray-40); padding-top: 5px; margin-top: 5px;">
+  <!-- Footer -->
+  <div class="flex flex--row flex--between flex--bottom" style="border-top: 1px solid var(--gray-40); padding-top: 5px; margin-top: 5px;">
     <div class="flex flex--col">
       <span class="label label--small">TEDIUM.CO</span>
       <span class="label label--small">{{ archive_date }}</span>
@@ -24,5 +32,8 @@
 <div class="title_bar">
   <img class="image" src="{{ favicon }}" style="filter: grayscale(100%);">
   <span class="title">TEDIUM</span>
-  <span class="instance">Random Archive</span>
+  <span class="instance">Archive</span>
 </div>
+
+<!-- DEBUG LINE: Remove this if everything works -->
+<div style="font-size: 8px; color: gray;">Debug: {{ title | truncate: 10 }} | {{ archive_date }}</div>
