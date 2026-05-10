@@ -6,7 +6,7 @@
   field_type: author_bio
   description: "Rediscover the history of boring things. Displays a random featured article from Tedium.co. Report issues via GitHub."
   github_url: "https://github.com/oreillymonitor/trmnl-tedium"
-  category: news, lifestyle
+  category: humor, entertainment
 
 - keyname: article_mode
   name: Display Mode
