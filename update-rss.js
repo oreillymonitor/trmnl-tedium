@@ -14,14 +14,19 @@ async function updateFromRSS() {
   const articles = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
   let newArticlesCount = 0;
 
-  const items = $xml('item');
-  console.log(`Found ${items.length} items in RSS.`);
+  const items = $xml('item, entry');
+  console.log(`Found ${items.length} items/entries in RSS/Atom.`);
 
   const newArticles = [];
 
   for (let i = 0; i < items.length; i++) {
     const item = items.eq(i);
-    const url = item.find('link').text() || item.find('guid').text();
+    let url = item.find('link').text() || item.find('guid').text();
+    
+    // Atom specific: link is often an attribute
+    if (!url || !url.startsWith('http')) {
+      url = item.find('link').attr('href');
+    }
 
     if (articles.find(a => a.url === url)) {
       continue;
