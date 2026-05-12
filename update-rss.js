@@ -32,7 +32,7 @@ async function updateFromRSS() {
       continue;
     }
 
-    console.log(`New article found: ${url}. Scraping metadata...`);
+    console.log(`Processing new article: ${url}`);
     try {
       const res = await fetch(url);
       const html = await res.text();
