@@ -1,0 +1,46 @@
+<!-- 
+  TEDIUM EDITORIAL POSTER (v20 - Precision Refined)
+  - Tighter box padding (10px 18px)
+  - Larger date text (label--base)
+-->
+
+<div class="layout" style="padding: 0; position: relative; height: 100%; width: 100%; overflow: hidden; background-color: black;">
+  <!-- Background Layer -->
+  <img class="image image-dither image--cover" src="{{ image_url }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: {{ image_opacity | default: 0.7 }};" />
+  
+  <!-- COLOR/ADVANCED DEVICE BOX -->
+  <div class="flex flex--col flex--center 1bit:hidden lg:hidden" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; padding: 15px;">
+    <div style="background-color: rgba(214, 90, 98, 0.95); width: 82%; padding: 10px 18px; border: 2px solid rgba(255,255,255,0.3); position: relative;">
+      <div class="flex flex--col grow" style="text-align: left;">
+        <div class="title title--large" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1; margin-bottom: 5px;">{{ title }}</div>
+        <div class="description description--xlarge" style="color: white; line-height: 1.25;">{{ description }}</div>
+        
+        <!-- Larger date in bottom right -->
+        <div style="text-align: right; width: 100%; margin-top: 5px;">
+          <span class="label label--base" style="color: white; opacity: 0.9; font-family: serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHITE BOX (Standard Monochrome & TRMNL X) -->
+  <div class="hidden 1bit:flex lg:flex flex--col flex--center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; padding: 15px;">
+    <div class="w--[82cqw] lg:w--[75cqw] p--4 lg:p--8" style="background-color: rgba(255, 255, 255, 0.95); border: 4px solid black; position: relative; padding: 10px 18px !important;">
+      <div class="flex flex--col grow" style="text-align: left;">
+        <div class="title title--large lg:title--xxlarge text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1; margin-bottom: 5px;">{{ title }}</div>
+        <div class="description description--xlarge lg:description--xxlarge text--black" style="line-height: 1.25;">{{ description }}</div>
+        
+        <!-- Larger date in bottom right -->
+        <div style="text-align: right; width: 100%; margin-top: 10px;">
+          <span class="label label--base text--black" style="opacity: 0.9; font-family: serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANDING LAYER -->
+  <div style="position: absolute; bottom: 15px; right: 15px; display: flex; gap: 12px; align-items: flex-end; z-index: 4;">
+    <img src="{{ logo_url }}" class="image image-dither w--20 h--20 lg:w--32 lg:h--32" style="border: 1px solid rgba(255,255,255,0.2); display: block;" />
+    <img src="{{ qr_url }}" class="image w--20 h--20 lg:w--32 lg:h--32" style="border: 1px solid rgba(255,255,255,0.2); display: block;" />
+  </div>
+</div>

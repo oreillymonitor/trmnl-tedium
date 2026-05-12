@@ -3,12 +3,12 @@
   
   <!-- STANDARD HARDWARE LAYOUT (Full-Bleed Poster) -->
   <div class="lg:hidden h--full w--full overflow--hidden no-shrink" style="position: relative;">
-    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; display: block;" />
+    <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%;" />
 
     <!-- Title Overlay -->
     <div class="flex flex--col flex--center p--3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
       <div class="1bit:hidden bg--red-40 p--3" style="width: 92%; border: 1px solid rgba(255,255,255,0.3);">
-        <div class="title title--base" style="font-family: serif; font-style: italic; font-weight: bold; color: white; line-height: 1.1;">{{ title }}</div>
+        <div class="title title--base text--white" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
       </div>
       <div class="hidden 1bit:block bg--white p--3" style="width: 92%; border: 2px solid black;">
         <div class="title title--base text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
@@ -16,9 +16,9 @@
     </div>
 
     <!-- Corner Branding -->
-    <div style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 8px; z-index: 3;">
-      <img src="{{ logo_url }}" class="image image-dither w--12 h--12" style="background: white; padding: 1px; border: 1px solid black;" />
-      <img src="{{ qr_url }}" class="image w--12 h--12" style="background: white; padding: 1px; border: 1px solid black;" />
+    <div class="flex gap--small" style="position: absolute; bottom: 8px; right: 8px; z-index: 3;">
+      <img src="{{ logo_url }}" class="image image-dither w--12 h--12 bg--white p--1" style="border: 1px solid black;" />
+      <img src="{{ qr_url }}" class="image w--12 h--12 bg--white p--1" style="border: 1px solid black;" />
     </div>
   </div>
 
@@ -26,7 +26,7 @@
   <div class="hidden lg:flex flex--col h--full w--full">
     <!-- Image Top (70%) -->
     <div class="h--[70cqh] w--full overflow--hidden no-shrink bg--black" style="position: relative;">
-      <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%; display: block;" />
+      <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%;" />
       
       <!-- Title Box on Image -->
       <div class="flex flex--col flex--center p--3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
@@ -36,13 +36,13 @@
       </div>
 
       <!-- Branding Overlay -->
-      <div style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 8px; z-index: 3;">
-        <img src="{{ logo_url }}" class="image image-dither w--16 h--16" style="background: white; padding: 2px; border: 1px solid black;" />
-        <img src="{{ qr_url }}" class="image w--16 h--16" style="background: white; padding: 2px; border: 1px solid black;" />
+      <div class="flex gap--small" style="position: absolute; bottom: 8px; right: 8px; z-index: 3;">
+        <img src="{{ logo_url }}" class="image image-dither w--16 h--16 bg--white p--1" style="border: 1px solid black;" />
+        <img src="{{ qr_url }}" class="image w--16 h--16 bg--white p--1" style="border: 1px solid black;" />
       </div>
     </div>
 
-    <!-- Content Bottom (30%) - No border, Tight Spacing -->
+    <!-- Content Bottom (30%) -->
     <div class="flex flex--col grow p--3 justify--top bg--white text--left">
       <div class="title title--small text--black" style="font-family: serif; font-style: italic; font-weight: bold; margin-bottom: 2px;">{{ archive_date }}</div>
       <div class="description description--large text--black" style="font-family: serif; font-style: italic; line-height: 1.25;">{{ description }}</div>
