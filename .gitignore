@@ -4,9 +4,9 @@ node_modules/
 .pnp.js
 
 # Documentation (Reference Only)
+TRMNL-DOCS/
 project.md
 .vercel/
-backup/
 
 # Testing
 coverage/
@@ -32,4 +32,3 @@ yarn-error.log*
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-.vercel
