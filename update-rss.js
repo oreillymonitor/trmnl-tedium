@@ -82,4 +82,7 @@ async function updateFromRSS() {
   }
 }
 
-updateFromRSS().catch(console.error);
+updateFromRSS().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
