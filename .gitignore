@@ -4,9 +4,9 @@ node_modules/
 .pnp.js
 
 # Documentation (Reference Only)
-TRMNL-DOCS/
 project.md
 .vercel/
+backup/
 
 # Testing
 coverage/
