@@ -46,6 +46,7 @@ module.exports = async function handler(req, res) {
     qr_url: `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(article.url)}`,
     archive_date: new URL(article.url).pathname.split('/').slice(1,4).join('/'),
     favicon: `${protocol}://${host}/favicon.ico`,
-    logo_url: `${protocol}://${host}/resources/t-logo_v3_square.jpg`
+    logo_url: `${protocol}://${host}/resources/t-logo_v3_square.jpg`,
+    debug_headers: req.headers
   });
 };
