@@ -18,13 +18,13 @@ module.exports = async function handler(req, res) {
   }
 
   // 2. Main TRMNL Content Delivery
-  console.log('Incoming Headers:', req.headers);
   const filePath = path.join(process.cwd(), 'articles.json');
   const fileData = fs.readFileSync(filePath, 'utf8');
   let articles = JSON.parse(fileData);
 
   // Handle User Settings from TRMNL Form Fields
   const mode = req.query.article_mode || req.query.mode;
+  const image_opacity = req.query.image_opacity || '0.7';
   let article;
   
   if (mode === 'latest') {
@@ -47,6 +47,6 @@ module.exports = async function handler(req, res) {
     archive_date: new URL(article.url).pathname.split('/').slice(1,4).join('/'),
     favicon: `${protocol}://${host}/favicon.ico`,
     logo_url: `${protocol}://${host}/resources/t-logo_v3_square.jpg`,
-    debug_headers: req.headers
+    image_opacity: image_opacity
   });
 };
