@@ -1,27 +1,22 @@
-<!-- QUADRANT VIEW (v33 - Total Parity Fix) -->
+<!-- QUADRANT VIEW (v34 - Unified Parity) -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
 
-<div class="layout layout--col p--0 bg--white" style="height: 100%; border: 1px solid rgba(0,0,0,0.1); position: relative;">
+<div class="layout layout--col p--0 1bit:bg--white lg:bg--white bg--white" style="height: 100%; border: 1px solid rgba(0,0,0,0.1); position: relative;">
   
-  <!-- STANDARD HARDWARE LAYOUT -->
+  <!-- 1. STANDARD HARDWARE LAYOUT -->
   <div class="lg:hidden h--full w--full overflow--hidden no-shrink" style="position: relative;">
     <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%;" />
 
-    <!-- Title Overlay -->
+    <!-- Title Overlay (Unified) -->
     <div class="flex flex--col flex--center p--3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
-      <!-- COLOR BOX (Identical to Monochrome) -->
-      <div class="1bit:hidden bg--red-30 p--3 border--1 border--solid border--white" style="width: 92%;">
-        <div class="title title--base text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ title }}</div>
-      </div>
-      <!-- MONOCHROME BOX -->
-      <div class="hidden 1bit:block bg--white p--3 border--1 border--solid border--black" style="width: 92%;">
-        <div class="title title--base text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ title }}</div>
+      <div class="1bit:bg--white bg--red-30 p--3 border--1 border--solid 1bit:border--black border--white" style="width: 92%;">
+        <div class="title title--base 1bit:text--black text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.2;">{{ title }}</div>
       </div>
     </div>
 
-    <!-- Corner Branding -->
+    <!-- Branding -->
     <div class="flex gap--small" style="position: absolute; bottom: 8px; right: 8px; z-index: 3;">
       <div class="bg--white p--1 w--10 h--10 no-shrink border--1 border--solid border--black">
         <img src="{{ logo_url }}" class="image image-dither" style="display: block; width: 100%; height: 100%;" />
@@ -32,8 +27,8 @@
     </div>
   </div>
 
-  <!-- TRMNL X HARDWARE LAYOUT -->
-  <div class="hidden lg:flex flex--col h--full w--full">
+  <!-- 2. TRMNL X HARDWARE LAYOUT -->
+  <div class="hidden lg:flex flex--col h--full w--full bg--white">
     <!-- Image Top (70%) -->
     <div class="h--[70cqh] w--full overflow--hidden no-shrink bg--black" style="position: relative;">
       <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%;" />
@@ -41,7 +36,7 @@
       <!-- Title Box on Image -->
       <div class="flex flex--col flex--center p--3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
         <div class="bg--white p--3 border--2 border--solid border--black" style="width: 90%;">
-          <div class="title title--medium text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ title }}</div>
+          <div class="title title--medium text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.2;">{{ title }}</div>
         </div>
       </div>
 
@@ -58,8 +53,8 @@
 
     <!-- Content Bottom (30%) -->
     <div class="flex flex--col grow p--3 justify--top bg--white text--left">
-      <div class="title title--small text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; margin-bottom: 2px;">{{ archive_date }}</div>
-      <div class="description description--large text--black" style="font-family: 'Besley', serif; font-style: italic;">{{ description }}</div>
+      <div class="title title--small text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; margin-bottom: 2px; line-height: 1.2;">{{ archive_date }}</div>
+      <div class="description description--large text--black" style="font-family: 'Besley', serif; font-style: italic; line-height: 1.3;">{{ description }}</div>
     </div>
   </div>
 
