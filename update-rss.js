@@ -5,6 +5,41 @@ const fs = require('fs');
 const RSS_URL = 'https://tedium.co/rss';
 const DATA_FILE = 'articles.json';
 
+/**
+ * Extracts the highest quality image URL from article HTML.
+ * Prioritizes direct static.tedium.co/uploads/ URLs.
+ */
+function extractHighQualityImage($) {
+  let bestImage = '';
+
+  $('img').each((i, el) => {
+    const src = $(el).attr('src');
+    if (!src) return;
+
+    if (src.includes('/uploads/')) {
+      const filename = src.split('/uploads/').pop().split('?')[0];
+      
+      if (filename.toLowerCase().endsWith('.gif')) {
+        bestImage = `https://static.tedium.co/uploads/${filename}`;
+        return false;
+      }
+      
+      if (!bestImage) {
+        bestImage = `https://static.tedium.co/uploads/${filename}`;
+      }
+    }
+  });
+
+  if (!bestImage) {
+    const ogImage = $('meta[property="og:image"]').attr('content');
+    if (ogImage && !ogImage.includes('11ty.dev')) {
+      bestImage = ogImage;
+    }
+  }
+
+  return bestImage;
+}
+
 async function updateFromRSS() {
   console.log('Fetching RSS feed...');
   const response = await fetch(RSS_URL);
@@ -12,8 +47,6 @@ async function updateFromRSS() {
   const $xml = cheerio.load(xml, { xmlMode: true });
 
   const articles = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-  let newArticlesCount = 0;
-
   const items = $xml('item, entry');
   console.log(`Found ${items.length} items/entries in RSS/Atom.`);
 
@@ -23,7 +56,6 @@ async function updateFromRSS() {
     const item = items.eq(i);
     let url = item.find('link').text() || item.find('guid').text();
     
-    // Atom specific: link is often an attribute
     if (!url || !url.startsWith('http')) {
       url = item.find('link').attr('href');
     }
@@ -40,23 +72,7 @@ async function updateFromRSS() {
 
       const title = $('title').text().replace(' - Tedium', '').trim();
       const description = $('meta[name="description"]').attr('content') || '';
-      
-      let imageUrl = '';
-      $('img').each((i, el) => {
-        const src = $(el).attr('src');
-        if (src && src.toLowerCase().endsWith('.gif')) {
-          imageUrl = src;
-          return false;
-        }
-      });
-
-      if (!imageUrl) {
-        imageUrl = $('meta[property="og:image"]').attr('content') || '';
-      }
-
-      if (imageUrl && !imageUrl.startsWith('http')) {
-        imageUrl = new URL(imageUrl, 'https://tedium.co').href;
-      }
+      const imageUrl = extractHighQualityImage($);
 
       newArticles.push({
         title,
@@ -73,7 +89,6 @@ async function updateFromRSS() {
   }
 
   if (newArticles.length > 0) {
-    // Prepend new articles to the existing list
     const updatedArticles = [...newArticles, ...articles];
     fs.writeFileSync(DATA_FILE, JSON.stringify(updatedArticles, null, 2));
     console.log(`Added ${newArticles.length} new articles to the top.`);

@@ -8,6 +8,7 @@ A high-impact editorial article display for your TRMNL screen, powered by the [T
 - **Multi-Device Support:** Custom layouts for Color (Crimson overlay), 1-bit Monochrome (High-contrast white box), and TRMNL X (High-resolution scaling).
 - **Automated Updates:** A GitHub Action fetches the latest articles from Tedium's RSS feed daily.
 - **Historical Backlog:** Includes a full database of **1,287+ articles** dating back to 2014.
+- **High-Fidelity Images:** Intelligently identifies and serves raw, original assets from `static.tedium.co`, avoiding processed versions and screenshots with baked-in titles.
 - **Shield & Proxy:** Uses a Vercel caching proxy to protect Tedium's bandwidth. Images are cached for 30 days.
 - **Zero Cost:** Runs entirely on GitHub Actions and Vercel's free tiers.
 

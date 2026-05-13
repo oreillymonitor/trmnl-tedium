@@ -5,6 +5,46 @@ const fs = require('fs');
 const SITEMAP_URL = 'https://tedium.co/sitemap.xml';
 const DATA_FILE = 'articles.json';
 
+/**
+ * Extracts the highest quality image URL from article HTML.
+ * Prioritizes direct static.tedium.co/uploads/ URLs.
+ */
+function extractHighQualityImage($) {
+  let bestImage = '';
+
+  $('img').each((i, el) => {
+    const src = $(el).attr('src');
+    if (!src) return;
+
+    // Look for anything in /uploads/ folder
+    if (src.includes('/uploads/')) {
+      const filename = src.split('/uploads/').pop().split('?')[0]; // strip query params
+      
+      // Prioritize GIFs as they are Tedium's signature look
+      if (filename.toLowerCase().endsWith('.gif')) {
+        bestImage = `https://static.tedium.co/uploads/${filename}`;
+        return false; // found a GIF, stop searching body
+      }
+      
+      // Fallback to first non-GIF upload found if no GIF found yet
+      if (!bestImage) {
+        bestImage = `https://static.tedium.co/uploads/${filename}`;
+      }
+    }
+  });
+
+  // Fallback to og:image if no body image found
+  if (!bestImage) {
+    const ogImage = $('meta[property="og:image"]').attr('content');
+    // Only use og:image if it's NOT a generated screenshot
+    if (ogImage && !ogImage.includes('11ty.dev')) {
+      bestImage = ogImage;
+    }
+  }
+
+  return bestImage;
+}
+
 async function scrapeBacklog(limit = 2000) {
   console.log('Fetching sitemap...');
   const response = await fetch(SITEMAP_URL);
@@ -41,23 +81,7 @@ async function scrapeBacklog(limit = 2000) {
 
       const title = $('title').text().replace(' - Tedium', '').trim();
       const description = $('meta[name="description"]').attr('content') || '';
-
-      let imageUrl = '';
-      $('img').each((i, el) => {
-        const src = $(el).attr('src');
-        if (src && src.toLowerCase().endsWith('.gif')) {
-          imageUrl = src;
-          return false;
-        }
-      });
-
-      if (!imageUrl) {
-        imageUrl = $('meta[property="og:image"]').attr('content') || '';
-      }
-
-      if (imageUrl && !imageUrl.startsWith('http')) {
-        imageUrl = new URL(imageUrl, 'https://tedium.co').href;
-      }
+      const imageUrl = extractHighQualityImage($);
 
       newArticles.push({
         title,
@@ -76,7 +100,6 @@ async function scrapeBacklog(limit = 2000) {
   const updatedArticles = [...newArticles, ...articles];
   fs.writeFileSync(DATA_FILE, JSON.stringify(updatedArticles, null, 2));
   console.log(`Done. Saved ${updatedArticles.length} articles to ${DATA_FILE}`);
-  }
-
+}
 
 scrapeBacklog().catch(console.error);
