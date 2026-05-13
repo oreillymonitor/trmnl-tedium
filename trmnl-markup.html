@@ -1,14 +1,15 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v36 - Unified Parity Final)
-  - Single-container strategy for 100% identical wrapping
-  - Besley font with descender clearance
+  TEDIUM EDITORIAL POSTER (v36 - Unified Spacing Final)
+  - Full line-height 1.4 for descender clearance
+  - Standardized Besley weights (900 title / 400 description)
 -->
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
   
-  /* Targeted boldness for TRMNL X headlines */
+  /* Targeted boldness and scale for TRMNL X */
   .lg .title--xxlarge { font-weight: 900 !important; }
+  .lg .description--xxlarge { font-weight: 400 !important; }
 </style>
 
 <div class="layout p--0 bg--black" style="position: relative; height: 100%; width: 100%; overflow: hidden;">
@@ -17,19 +18,19 @@
   
   <!-- Centered Editorial Box -->
   <div class="flex flex--col flex--center p--4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
-    <!-- Unified Container: Mirror-image formatting for all modes -->
+    <!-- Unified Container -->
     <div class="1bit:bg--white lg:bg--white bg--red-30 p--4 lg:p--8 border--2 border--solid 1bit:border--black lg:border--black border--white" 
          style="width: 82%; lg:width: 75%; border-color: rgba(255,255,255,0.3); position: relative;">
       <div class="flex flex--col grow text--left w--full">
-        <!-- Title: Height 1.4 + pb--1 for total descender safety -->
-        <div class="title title--large lg:title--xxlarge 1bit:text--black lg:text--black text--white pb--1" 
-             style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.4;">{{ title }}</div>
+        <!-- Title: Weight 900, Line-height 1.4, Padding-bottom for tail clearance -->
+        <div class="title title--large lg:title--xxlarge 1bit:text--black lg:text--black text--white pb--2" 
+             style="font-family: 'Besley', serif; font-style: italic; font-weight: 900; line-height: 1.4;">{{ title }}</div>
         
-        <!-- Description: Reduced margin to mt--1 to pull text up -->
-        <div class="description description--xlarge lg:description--xxlarge 1bit:text--black lg:text--black text--white mt--1 pb--1" 
-             style="font-family: 'Besley', serif; line-height: 1.4;">{{ description }}</div>
+        <!-- Description: Weight 400, Line-height 1.4, pt--1 to prevent run-in -->
+        <div class="description description--xlarge lg:description--xxlarge 1bit:text--black lg:text--black text--white mt--1 pt--1 pb--1" 
+             style="font-family: 'Besley', serif; font-weight: 400; line-height: 1.4;">{{ description }}</div>
         
-        <div class="mt--1 text--right w--full">
+        <div class="mt--2 text--right w--full">
           <span class="label label--base 1bit:text--black lg:text--black text--white" 
                 style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
         </div>
