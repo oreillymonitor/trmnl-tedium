@@ -18,6 +18,7 @@ module.exports = async function handler(req, res) {
   }
 
   // 2. Main TRMNL Content Delivery
+  console.log('Incoming Headers:', req.headers);
   const filePath = path.join(process.cwd(), 'articles.json');
   const fileData = fs.readFileSync(filePath, 'utf8');
   let articles = JSON.parse(fileData);
