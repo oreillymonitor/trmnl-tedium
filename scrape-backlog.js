@@ -7,36 +7,41 @@ const DATA_FILE = 'articles.json';
 
 /**
  * Extracts the highest quality image URL from article HTML.
- * Prioritizes direct static.tedium.co/uploads/ URLs.
+ * Prioritizes Pagefind metadata, then direct uploads.
  */
 function extractHighQualityImage($) {
-  let bestImage = '';
+  // 1. Priority: Pagefind metadata (the most reliable source)
+  const pagefindImage = $('div[data-pagefind-meta="image"]').text().trim();
+  if (pagefindImage && pagefindImage.startsWith('http')) {
+    return pagefindImage;
+  }
 
+  // 2. Secondary: Search body for GIFs (excluding bio/logo)
+  let bestImage = '';
   $('img').each((i, el) => {
     const src = $(el).attr('src');
     if (!src) return;
 
-    // Look for anything in /uploads/ folder
+    // Ignore known non-article images
+    if (src.includes('ernie_crop') || src.includes('t-logo') || src.includes('favicon')) {
+      return;
+    }
+
     if (src.includes('/uploads/')) {
-      const filename = src.split('/uploads/').pop().split('?')[0]; // strip query params
-      
-      // Prioritize GIFs as they are Tedium's signature look
+      const filename = src.split('/uploads/').pop().split('?')[0];
       if (filename.toLowerCase().endsWith('.gif')) {
         bestImage = `https://static.tedium.co/uploads/${filename}`;
-        return false; // found a GIF, stop searching body
+        return false;
       }
-      
-      // Fallback to first non-GIF upload found if no GIF found yet
       if (!bestImage) {
         bestImage = `https://static.tedium.co/uploads/${filename}`;
       }
     }
   });
 
-  // Fallback to og:image if no body image found
+  // 3. Fallback: og:image (if not 11ty screenshot)
   if (!bestImage) {
     const ogImage = $('meta[property="og:image"]').attr('content');
-    // Only use og:image if it's NOT a generated screenshot
     if (ogImage && !ogImage.includes('11ty.dev')) {
       bestImage = ogImage;
     }
