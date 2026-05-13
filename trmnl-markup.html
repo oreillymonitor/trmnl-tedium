@@ -1,7 +1,6 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v23 - Deep Red)
-  - Darker red palette (bg--red-30)
-  - 100% Linter Compliant
+  TEDIUM EDITORIAL POSTER (v24 - Visual Parity Fix)
+  - Matched padding and borders for identical wrapping
 -->
 
 <style>
@@ -17,9 +16,7 @@
     <div class="bg--red-30 p--4" style="width: 82%; border: 2px solid rgba(255,255,255,0.3); position: relative;">
       <div class="flex flex--col grow text--left">
         <div class="title title--large text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
-        <div class="description description--xlarge text--white" style="font-family: 'Besley', serif; line-height: 1.25;">{{ description }}</div>
-        
-        <!-- Date in bottom right -->
+        <div class="description description--xlarge text--white" style="line-height: 1.25;">{{ description }}</div>
         <div class="mt--1 text--right" style="width: 100%;">
           <span class="label label--base text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
         </div>
@@ -29,14 +26,13 @@
 
   <!-- WHITE BOX (Standard Monochrome & TRMNL X) -->
   <div class="hidden 1bit:flex lg:flex flex--col flex--center p--4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3;">
-    <div class="w--[82cqw] lg:w--[75cqw] bg--white p--4 lg:p--8" style="border: 4px solid black; position: relative;">
+    <!-- Matched width, padding, and border weight for parity -->
+    <div class="w--[82cqw] lg:w--[75cqw] bg--white p--4 lg:p--8" style="border: 2px solid black; position: relative;">
       <div class="flex flex--col grow text--left">
-        <div class="title title--large lg:title--xxlarge text--black" style="font-family: serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
+        <div class="title title--large lg:title--xxlarge text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
         <div class="description description--xlarge lg:description--xxlarge text--black" style="line-height: 1.25;">{{ description }}</div>
-        
-        <!-- Date in bottom right -->
         <div class="mt--2 text--right" style="width: 100%;">
-          <span class="label label--base text--black" style="font-family: serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
+          <span class="label label--base text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
         </div>
       </div>
     </div>
