@@ -1,10 +1,9 @@
-<!-- HALF HORIZONTAL VIEW (v31 - Unified Spacing Final) -->
+<!-- HALF HORIZONTAL VIEW (v31 - High-Density Spacing) -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
   
-  /* Targeted boldness and scale for TRMNL X */
+  /* Targeted boldness for TRMNL X headlines */
   .lg .title--xxlarge { font-weight: 900 !important; }
-  .lg .description--xxlarge { font-weight: 400 !important; }
 </style>
 
 <div class="layout layout--row p--0 1bit:bg--white lg:bg--white bg--red-30" style="height: 100%;">
@@ -22,15 +21,18 @@
     </div>
   </div>
 
-  <!-- Unified Content Side -->
-  <div class="w--[50cqw] h--full no-shrink p--4 lg:p--8 flex flex--col flex--align-start justify--top text--left 1bit:bg--white lg:bg--white bg--red-30" style="position: relative; z-index: 1;">
-    <div class="1bit:text--black lg:text--black text--white text--left w--full mb--1 lg:mb--2" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</div>
+  <!-- Unified Content Side: Negative margin closes the vertical gap -->
+  <div class="w--[50cqw] h--full no-shrink p--4 lg:p--6 flex flex--col flex--align-start justify--top text--left 1bit:bg--white lg:bg--white bg--red-30 ml--[-1px]" style="position: relative; z-index: 1;">
+    <!-- Date: Zero margin to push everything up -->
+    <div class="1bit:text--black lg:text--black text--white text--left w--full mb--0 pb--1" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</div>
     
-    <div class="title title--medium lg:title--xxlarge 1bit:text--black lg:text--black text--white text--left w--full border--1 border--solid 1bit:border--black lg:border--black border--white border--left-0 border--right-0 border--bottom-0 pt--1 pb--2" 
-         style="font-family: 'Besley', serif; font-style: italic; font-weight: 900; line-height: 1.4;">{{ title }}</div>
+    <!-- Title: line-height 1.2 and pb--1 to clear descenders -->
+    <div class="title title--medium lg:title--xxlarge 1bit:text--black lg:text--black text--white text--left w--full border--1 border--solid 1bit:border--black lg:border--black border--white border--left-0 border--right-0 border--bottom-0 pt--1 pb--1" 
+         style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.2;">{{ title }}</div>
     
-    <div class="description description--large lg:description--xxlarge 1bit:text--black lg:text--black text--white text--left w--full mt--1 pt--1 pb--1" 
-         style="font-family: 'Besley', serif; font-weight: 400; line-height: 1.4;">{{ description }}</div>
+    <!-- Description: mt--1 to pull text up and prevent bottom clipping -->
+    <div class="description description--large lg:description--xxlarge 1bit:text--black lg:text--black text--white text--left w--full mt--1 pb--1" 
+         style="font-family: 'Besley', serif; font-style: italic; line-height: 1.2;">{{ description }}</div>
   </div>
 
 </div>
