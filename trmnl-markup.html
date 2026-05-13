@@ -1,6 +1,7 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v25 - High Scanability QR)
-  - Added white quiet zone and border to QR code for easier scanning
+  TEDIUM EDITORIAL POSTER (v26 - Precision Sized QR)
+  - Fixed branding bloat by moving sizing to containers
+  - Maintained scanability borders
 -->
 
 <style>
@@ -37,15 +38,15 @@
     </div>
   </div>
 
-  <!-- BRANDING LAYER (High Scanability) -->
+  <!-- BRANDING LAYER -->
   <div class="flex gap--medium flex--align-end" style="position: absolute; bottom: 15px; right: 15px; z-index: 4;">
-    <!-- Logo -->
-    <div class="bg--white p--1" style="border: 1px solid black;">
-      <img src="{{ logo_url }}" class="image image-dither w--18 h--18 lg:w--30 lg:h--30" style="display: block;" />
+    <!-- Logo Container -->
+    <div class="bg--white p--1 w--20 h--20 lg:w--32 lg:h--32 no-shrink" style="border: 1px solid black;">
+      <img src="{{ logo_url }}" class="image image-dither" style="display: block; width: 100%; height: 100%;" />
     </div>
-    <!-- QR Code with white quiet zone and border -->
-    <div class="bg--white p--1" style="border: 1px solid black;">
-      <img src="{{ qr_url }}" class="image w--18 h--18 lg:w--30 lg:h--30" style="display: block;" />
+    <!-- QR Container -->
+    <div class="bg--white p--1 w--20 h--20 lg:w--32 lg:h--32 no-shrink" style="border: 1px solid black;">
+      <img src="{{ qr_url }}" class="image" style="display: block; width: 100%; height: 100%;" />
     </div>
   </div>
 </div>

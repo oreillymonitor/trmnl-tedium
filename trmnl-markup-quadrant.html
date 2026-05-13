@@ -1,4 +1,4 @@
-<!-- QUADRANT VIEW (v29 - High Scanability QR) -->
+<!-- QUADRANT VIEW (v30 - Precision Sized QR) -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
@@ -21,11 +21,11 @@
 
     <!-- Corner Branding (High Scanability) -->
     <div class="flex gap--small" style="position: absolute; bottom: 8px; right: 8px; z-index: 3;">
-      <div class="bg--white p--1" style="border: 1px solid black;">
-        <img src="{{ logo_url }}" class="image image-dither w--10 h--10" style="display: block;" />
+      <div class="bg--white p--1 w--10 h--10 no-shrink" style="border: 1px solid black;">
+        <img src="{{ logo_url }}" class="image image-dither" style="display: block; width: 100%; height: 100%;" />
       </div>
-      <div class="bg--white p--1" style="border: 1px solid black;">
-        <img src="{{ qr_url }}" class="image w--10 h--10" style="display: block;" />
+      <div class="bg--white p--1 w--10 h--10 no-shrink" style="border: 1px solid black;">
+        <img src="{{ qr_url }}" class="image" style="display: block; width: 100%; height: 100%;" />
       </div>
     </div>
   </div>
@@ -45,11 +45,11 @@
 
       <!-- Branding Overlay (High Scanability) -->
       <div class="flex gap--small" style="position: absolute; bottom: 8px; right: 8px; z-index: 3;">
-        <div class="bg--white p--1" style="border: 1px solid black;">
-          <img src="{{ logo_url }}" class="image image-dither w--14 h--14" style="display: block;" />
+        <div class="bg--white p--1 w--14 h--14 no-shrink" style="border: 1px solid black;">
+          <img src="{{ logo_url }}" class="image image-dither" style="display: block; width: 100%; height: 100%;" />
         </div>
-        <div class="bg--white p--1" style="border: 1px solid black;">
-          <img src="{{ qr_url }}" class="image w--14 h--14" style="display: block;" />
+        <div class="bg--white p--1 w--14 h--14 no-shrink" style="border: 1px solid black;">
+          <img src="{{ qr_url }}" class="image" style="display: block; width: 100%; height: 100%;" />
         </div>
       </div>
     </div>
