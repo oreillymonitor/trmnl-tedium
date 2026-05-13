@@ -1,4 +1,4 @@
-<!-- HALF HORIZONTAL VIEW (v24 - Total Parity Fix) -->
+<!-- HALF HORIZONTAL VIEW (v25 - Final Spacing Fixes) -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
   
@@ -21,17 +21,17 @@
     </div>
   </div>
 
-  <!-- Unified Content Side: Standardizes line-height and padding for 100% parity -->
+  <!-- Unified Content Side: Optimized for Besley descenders -->
   <div class="w--[50cqw] h--full no-shrink p--4 lg:p--8 flex flex--col flex--align-start justify--top text--left 1bit:bg--white lg:bg--white bg--red-30" style="position: relative; z-index: 1;">
     <div class="1bit:text--black lg:text--black text--white text--left w--full mb--1 lg:mb--2" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</div>
     
-    <!-- Title: Standardized line-height 1.1 and padding-bottom 2 to clear Besley descenders -->
-    <div class="title title--medium lg:title--xxlarge 1bit:text--black lg:text--black text--white text--left w--full border--1 border--solid 1bit:border--black lg:border--black border--white border--left-0 border--right-0 border--bottom-0 pt--1 pb--2" 
-         style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
+    <!-- Title: Height 1.2 and Padding-bottom for clearance -->
+    <div class="title title--medium lg:title--xlarge 1bit:text--black lg:text--black text--white text--left w--full border--1 border--solid 1bit:border--black lg:border--black border--white border--left-0 border--right-0 border--bottom-0 pt--1 pb--2" 
+         style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.2;">{{ title }}</div>
     
-    <!-- Description: mount-2/lg:mt-4 to prevent overlap with title bar -->
-    <div class="description description--large lg:description--xxlarge 1bit:text--black lg:text--black text--white text--left w--full mt--2 lg:mt--4" 
-         style="font-family: 'Besley', serif; font-style: italic; line-height: 1.2;">{{ description }}</div>
+    <!-- Description: Reduced X size and Line-height 1.4 for maximum clearance -->
+    <div class="description description--large lg:description--xlarge 1bit:text--black lg:text--black text--white text--left w--full mt--3 lg:mt--6 pb--1" 
+         style="font-family: 'Besley', serif; font-style: italic; line-height: 1.4;">{{ description }}</div>
   </div>
 
 </div>
