@@ -1,6 +1,6 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v24 - Visual Parity Fix)
-  - Matched padding and borders for identical wrapping
+  TEDIUM EDITORIAL POSTER (v25 - High Scanability QR)
+  - Added white quiet zone and border to QR code for easier scanning
 -->
 
 <style>
@@ -26,7 +26,6 @@
 
   <!-- WHITE BOX (Standard Monochrome & TRMNL X) -->
   <div class="hidden 1bit:flex lg:flex flex--col flex--center p--4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3;">
-    <!-- Matched width, padding, and border weight for parity -->
     <div class="w--[82cqw] lg:w--[75cqw] bg--white p--4 lg:p--8" style="border: 2px solid black; position: relative;">
       <div class="flex flex--col grow text--left">
         <div class="title title--large lg:title--xxlarge text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
@@ -38,9 +37,15 @@
     </div>
   </div>
 
-  <!-- BRANDING LAYER -->
+  <!-- BRANDING LAYER (High Scanability) -->
   <div class="flex gap--medium flex--align-end" style="position: absolute; bottom: 15px; right: 15px; z-index: 4;">
-    <img src="{{ logo_url }}" class="image image-dither w--20 h--20 lg:w--32 lg:h--32" style="border: 1px solid rgba(255,255,255,0.2);" />
-    <img src="{{ qr_url }}" class="image w--20 h--20 lg:w--32 lg:h--32" style="border: 1px solid rgba(255,255,255,0.2);" />
+    <!-- Logo -->
+    <div class="bg--white p--1" style="border: 1px solid black;">
+      <img src="{{ logo_url }}" class="image image-dither w--18 h--18 lg:w--30 lg:h--30" style="display: block;" />
+    </div>
+    <!-- QR Code with white quiet zone and border -->
+    <div class="bg--white p--1" style="border: 1px solid black;">
+      <img src="{{ qr_url }}" class="image w--18 h--18 lg:w--30 lg:h--30" style="display: block;" />
+    </div>
   </div>
 </div>

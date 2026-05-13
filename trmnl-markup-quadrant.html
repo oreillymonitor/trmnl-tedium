@@ -1,34 +1,36 @@
-<!-- QUADRANT VIEW (v28 - Visual Parity Fix) -->
+<!-- QUADRANT VIEW (v29 - High Scanability QR) -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
 
 <div class="layout layout--col p--0 bg--white" style="height: 100%; border: 1px solid rgba(0,0,0,0.1); position: relative;">
   
-  <!-- STANDARD HARDWARE LAYOUT (Full-Bleed Poster) -->
+  <!-- STANDARD HARDWARE LAYOUT -->
   <div class="lg:hidden h--full w--full overflow--hidden no-shrink" style="position: relative;">
     <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%;" />
 
     <!-- Title Overlay -->
     <div class="flex flex--col flex--center p--3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
-      <!-- COLOR BOX (Matched Padding) -->
       <div class="1bit:hidden bg--red-30 p--3" style="width: 92%; border: 1px solid rgba(255,255,255,0.3);">
         <div class="title title--base text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
       </div>
-      <!-- MONOCHROME BOX (Matched Padding and Border weight) -->
       <div class="hidden 1bit:block bg--white p--3" style="width: 92%; border: 1px solid black;">
         <div class="title title--base text--black" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
       </div>
     </div>
 
-    <!-- Corner Branding -->
+    <!-- Corner Branding (High Scanability) -->
     <div class="flex gap--small" style="position: absolute; bottom: 8px; right: 8px; z-index: 3;">
-      <img src="{{ logo_url }}" class="image image-dither w--12 h--12 bg--white p--1" style="border: 1px solid black;" />
-      <img src="{{ qr_url }}" class="image w--12 h--12 bg--white p--1" style="border: 1px solid black;" />
+      <div class="bg--white p--1" style="border: 1px solid black;">
+        <img src="{{ logo_url }}" class="image image-dither w--10 h--10" style="display: block;" />
+      </div>
+      <div class="bg--white p--1" style="border: 1px solid black;">
+        <img src="{{ qr_url }}" class="image w--10 h--10" style="display: block;" />
+      </div>
     </div>
   </div>
 
-  <!-- TRMNL X HARDWARE LAYOUT (70/30) -->
+  <!-- TRMNL X HARDWARE LAYOUT -->
   <div class="hidden lg:flex flex--col h--full w--full">
     <!-- Image Top (70%) -->
     <div class="h--[70cqh] w--full overflow--hidden no-shrink bg--black" style="position: relative;">
@@ -41,10 +43,14 @@
         </div>
       </div>
 
-      <!-- Branding Overlay -->
+      <!-- Branding Overlay (High Scanability) -->
       <div class="flex gap--small" style="position: absolute; bottom: 8px; right: 8px; z-index: 3;">
-        <img src="{{ logo_url }}" class="image image-dither w--16 h--16 bg--white p--1" style="border: 1px solid black;" />
-        <img src="{{ qr_url }}" class="image w--16 h--16 bg--white p--1" style="border: 1px solid black;" />
+        <div class="bg--white p--1" style="border: 1px solid black;">
+          <img src="{{ logo_url }}" class="image image-dither w--14 h--14" style="display: block;" />
+        </div>
+        <div class="bg--white p--1" style="border: 1px solid black;">
+          <img src="{{ qr_url }}" class="image w--14 h--14" style="display: block;" />
+        </div>
       </div>
     </div>
 
