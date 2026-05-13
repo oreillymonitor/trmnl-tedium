@@ -1,10 +1,9 @@
-<!-- HALF HORIZONTAL VIEW (v32 - User Base + X-Tuned) -->
+<!-- HALF HORIZONTAL VIEW (v32 - Precision Spacing) -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
   
   /* Targeted boldness for TRMNL X headlines */
-  .lg .title--xxlarge, .lg .description--xxlarge { font-weight: 900 !important; }
-  .lg .description--xlarge { font-weight: 400 !important; }
+  .lg .title--xxlarge { font-weight: 900 !important; }
 </style>
 
 <div class="layout layout--row p--0 1bit:bg--white lg:bg--white bg--red-30" style="height: 100%;">
@@ -22,17 +21,17 @@
     </div>
   </div>
 
-  <!-- Unified Content Side: Using User's Exact pt/px/pb + X-Tuning -->
+  <!-- Unified Content Side: Tightened pt--2 to pull text up -->
   <div class="w--[50cqw] h--full no-shrink pt--2 px--3 pb--3 lg:pt--4 lg:px--8 lg:pb--8 flex flex--col flex--align-start justify--top text--left 1bit:bg--white lg:bg--white bg--red-30 ml--[-1px]" style="position: relative; z-index: 1;">
-    <!-- Date -->
+    <!-- Date: Zero bottom padding to hug title -->
     <div class="1bit:text--black lg:text--black text--white text--left w--full mb--0 pb--0" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</div>
     
-    <!-- Title: title--medium for OG, description--xxlarge (24px) for X to match description -->
-    <div class="title title--medium lg:description--xxlarge 1bit:text--black lg:text--black text--white text--left w--full border--1 border--solid 1bit:border--black lg:border--black border--white border--left-0 border--right-0 border--bottom-0 pt--0 pb--1" 
-         style="font-family: 'Besley', serif; font-style: italic; line-height: 1.1;">{{ title }}</div>
+    <!-- Title: Zero top padding, 1.1 line-height, pb--1 for descenders -->
+    <div class="title title--medium lg:title--xxlarge 1bit:text--black lg:text--black text--white text--left w--full border--1 border--solid 1bit:border--black lg:border--black border--white border--left-0 border--right-0 border--bottom-0 pt--0 pb--1" 
+         style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.1;">{{ title }}</div>
     
-    <!-- Description: description--large for OG, description--xlarge (21px) for X -->
-    <div class="description description--large lg:description--xlarge 1bit:text--black lg:text--black text--white text--left w--full mt--2 pb--1" 
+    <!-- Description: mt--2 for safe separation, 1.2 line-height -->
+    <div class="description description--large lg:description--xxlarge 1bit:text--black lg:text--black text--white text--left w--full mt--2 pb--1" 
          style="font-family: 'Besley', serif; font-style: italic; line-height: 1.2;">{{ description }}</div>
   </div>
 
