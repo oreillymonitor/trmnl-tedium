@@ -1,7 +1,7 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v35 - Max Spacing)
-  - Unified line-height 1.4 for all text
-  - Increased margins to mt--4 / lg:mt--8
+  TEDIUM EDITORIAL POSTER (v36 - Unified Parity Final)
+  - Single-container strategy for 100% identical wrapping
+  - Besley font with descender clearance
 -->
 
 <style>
@@ -17,19 +17,19 @@
   
   <!-- Centered Editorial Box -->
   <div class="flex flex--col flex--center p--4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
-    <!-- Unified Container -->
+    <!-- Unified Container: Mirror-image formatting for all modes -->
     <div class="1bit:bg--white lg:bg--white bg--red-30 p--4 lg:p--8 border--2 border--solid 1bit:border--black lg:border--black border--white" 
          style="width: 82%; lg:width: 75%; border-color: rgba(255,255,255,0.3); position: relative;">
       <div class="flex flex--col grow text--left w--full">
-        <!-- Title: Unified line-height 1.4 for total safety -->
-        <div class="title title--large lg:title--xlarge 1bit:text--black lg:text--black text--white pt--1 pb--2" 
+        <!-- Title: Height 1.4 + pb--1 for total descender safety -->
+        <div class="title title--large lg:title--xxlarge 1bit:text--black lg:text--black text--white pb--1" 
              style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.4;">{{ title }}</div>
         
-        <!-- Description: Unified line-height 1.4 and mt--4 for safety -->
-        <div class="description description--xlarge lg:description--xlarge 1bit:text--black lg:text--black text--white mt--4 lg:mt--8 pb--1" 
+        <!-- Description: Reduced margin to mt--1 to pull text up -->
+        <div class="description description--xlarge lg:description--xxlarge 1bit:text--black lg:text--black text--white mt--1 pb--1" 
              style="font-family: 'Besley', serif; line-height: 1.4;">{{ description }}</div>
         
-        <div class="mt--2 text--right w--full">
+        <div class="mt--1 text--right w--full">
           <span class="label label--base 1bit:text--black lg:text--black text--white" 
                 style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
         </div>
