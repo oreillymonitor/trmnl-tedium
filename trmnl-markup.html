@@ -1,6 +1,6 @@
 <!-- 
-  TEDIUM EDITORIAL POSTER (v31 - Unified Parity)
-  - Single-container strategy for 100% identical wrapping
+  TEDIUM EDITORIAL POSTER (v32 - Unified X Fix)
+  - Added lg: overrides for perfect high-contrast on TRMNL X
 -->
 
 <style>
@@ -13,15 +13,15 @@
   
   <!-- Centered Editorial Box -->
   <div class="flex flex--col flex--center p--4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
-    <!-- Unified Container: Color-aware background and borders -->
-    <div class="1bit:bg--white bg--red-30 p--4 lg:p--8 border--2 border--solid 1bit:border--black border--white" 
+    <!-- Unified Container: Color on advanced, White on 1bit and LG (X) -->
+    <div class="1bit:bg--white lg:bg--white bg--red-30 p--4 lg:p--8 border--2 border--solid 1bit:border--black lg:border--black border--white" 
          style="width: 82%; lg:width: 75%; border-color: rgba(255,255,255,0.3); position: relative;">
       <div class="flex flex--col grow text--left w--full">
-        <div class="title title--large lg:title--xxlarge 1bit:text--black text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.2;">{{ title }}</div>
-        <div class="description description--xlarge lg:description--xxlarge 1bit:text--black text--white mt--1" style="font-family: 'Besley', serif;">{{ description }}</div>
+        <div class="title title--large lg:title--xxlarge 1bit:text--black lg:text--black text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold; line-height: 1.2;">{{ title }}</div>
+        <div class="description description--xlarge lg:description--xxlarge 1bit:text--black lg:text--black text--white mt--1" style="font-family: 'Besley', serif;">{{ description }}</div>
         
         <div class="mt--2 text--right w--full">
-          <span class="label label--base 1bit:text--black text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
+          <span class="label label--base 1bit:text--black lg:text--black text--white" style="font-family: 'Besley', serif; font-style: italic; font-weight: bold;">{{ archive_date }}</span>
         </div>
       </div>
     </div>
