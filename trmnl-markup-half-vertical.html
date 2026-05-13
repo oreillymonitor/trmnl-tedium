@@ -1,4 +1,4 @@
-<!-- HALF VERTICAL VIEW (v19 - Precision Sized QR) -->
+<!-- HALF VERTICAL VIEW (v20 - Precision Sizing Fix) -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
@@ -45,10 +45,11 @@
       <img class="image image-dither image--cover" src="{{ image_url }}" style="height: 100%; width: 100%;" />
       <!-- High Scanability Branding -->
       <div class="flex gap--medium" style="position: absolute; bottom: 10px; right: 10px; z-index: 2;">
-        <div class="bg--white p--1 w--22 h--22 no-shrink" style="border: 1px solid black;">
+        <!-- Corrected to w--24 (Valid token) -->
+        <div class="bg--white p--1 w--24 h--24 no-shrink" style="border: 1px solid black;">
           <img src="{{ logo_url }}" class="image image-dither" style="display: block; width: 100%; height: 100%;" />
         </div>
-        <div class="bg--white p--1 w--22 h--22 no-shrink" style="border: 1px solid black;">
+        <div class="bg--white p--1 w--24 h--24 no-shrink" style="border: 1px solid black;">
           <img src="{{ qr_url }}" class="image" style="display: block; width: 100%; height: 100%;" />
         </div>
       </div>
