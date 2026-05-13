@@ -23,7 +23,7 @@ function extractHighQualityImage($) {
     if (!src) return;
 
     // Ignore known non-article images
-    if (src.includes('ernie_crop') || src.includes('david_new') || src.includes('t-logo') || src.includes('favicon')) {
+    if (src.includes('ernie_crop') || src.includes('david_new') || src.includes('andrew_egan') || src.includes('share-openly') || src.includes('t-logo') || src.includes('favicon')) {
       return;
     }
 
